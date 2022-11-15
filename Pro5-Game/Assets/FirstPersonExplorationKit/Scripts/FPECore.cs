@@ -43,8 +43,8 @@ namespace Whilefun.FPEKit
         [SerializeField, Tooltip("")]
         private GameObject saveLoadManagerPrefab = null;
 
-        [SerializeField, Tooltip("")]
-        private GameObject menuPrefab = null;
+        //[SerializeField, Tooltip("")]
+        //private GameObject menuPrefab = null;
 
         private bool initialized = false;
         
@@ -92,7 +92,7 @@ namespace Whilefun.FPEKit
         private void initialize()
         {
 
-            if (!HUDPrefab || !eventSystemPrefab || !interactionManagerPrefab || !playerPrefab || !inputManagerPrefab || !saveLoadManagerPrefab || !menuPrefab)
+            if (!HUDPrefab || !eventSystemPrefab || !interactionManagerPrefab || !playerPrefab || !inputManagerPrefab || !saveLoadManagerPrefab)
             {
                 Debug.LogError("FPECore:: Missing prefab for core component. Game will not function correctly. See Inspector for object '" + gameObject.name + "' to ensure all fields are populated correctly.");
             }
@@ -125,7 +125,7 @@ namespace Whilefun.FPEKit
 
             Instantiate(inputManagerPrefab, null);
             Instantiate(saveLoadManagerPrefab, null);
-            Instantiate(menuPrefab, null);
+            //Instantiate(menuPrefab, null);
 
             FPEHUD.Instance.initialize();
             FPEInteractionManagerScript.Instance.initialize();
