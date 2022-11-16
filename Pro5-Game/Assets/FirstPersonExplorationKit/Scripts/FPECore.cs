@@ -43,8 +43,8 @@ namespace Whilefun.FPEKit
         [SerializeField, Tooltip("")]
         private GameObject saveLoadManagerPrefab = null;
 
-        //[SerializeField, Tooltip("")]
-        //private GameObject menuPrefab = null;
+        [SerializeField, Tooltip("")]
+        private GameObject menuPrefab = null;
 
         private bool initialized = false;
         
@@ -125,7 +125,7 @@ namespace Whilefun.FPEKit
 
             Instantiate(inputManagerPrefab, null);
             Instantiate(saveLoadManagerPrefab, null);
-            //Instantiate(menuPrefab, null);
+            Instantiate(menuPrefab, null);
 
             FPEHUD.Instance.initialize();
             FPEInteractionManagerScript.Instance.initialize();
