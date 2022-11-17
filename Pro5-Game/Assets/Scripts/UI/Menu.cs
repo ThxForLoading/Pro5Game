@@ -5,17 +5,17 @@ using Whilefun.FPEKit;
 
 namespace UI
 {
-    public class PauseMenu : FPEMenu
+    public class Menu : FPEMenu
     {
 
-        public static PauseMenu Instance;
+        public static Menu Instance;
         
         [SerializeField] private Button settings;
         [SerializeField] private Button controlls;
         [SerializeField] private Button exitGame;
         
         [SerializeField] private GameObject settingsTab;
-        [SerializeField] private GameObject settingsTabStartMenu;
+
         [SerializeField] private GameObject controllsTab;
         [SerializeField] private GameObject menuTab;
         [SerializeField] private GameObject menuTabStartMenu;
@@ -53,6 +53,7 @@ namespace UI
         {
             interactionManager.openMenu();
             deactivateAllTabs();
+            print("Mouse Sensitivity: " + FPEInputManager.Instance.LookSensitivity);
         }
 
 
@@ -78,6 +79,8 @@ namespace UI
             if (menuState != MenuState.startMenu)
             {
                 pauseMenu.SetActive(true);
+                menuTab.SetActive(true);
+                
                 menuState = MenuState.pauseMenu;
             }
         }
@@ -87,6 +90,7 @@ namespace UI
             if (menuState != MenuState.startMenu)
             {
                 pauseMenu.SetActive(false);
+                deactivateAllTabs();
                 menuState = MenuState.None;
             }
         }
@@ -100,7 +104,7 @@ namespace UI
                 case ButtonType.Settings:
                     if (menuState == MenuState.startMenu)
                     {
-                        settingsTabStartMenu.SetActive(true);
+                        settingsTab.SetActive(true);
                         menuTabStartMenu.SetActive(false);
                     }
                     else if(menuState == MenuState.pauseMenu)
@@ -150,7 +154,6 @@ namespace UI
         {
             settingsTab.SetActive(false);
             controllsTab.SetActive(false);
-            settingsTabStartMenu.SetActive(false);
         }
         
         // change sensitivity

@@ -9,11 +9,11 @@ using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private PauseMenu.ButtonType buttonType;
+    [SerializeField] private Menu.ButtonType buttonType;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        PauseMenu.Instance.buttonPressed(buttonType);
+        Menu.Instance.buttonPressed(buttonType);
     }
 
     public void OnPointerUp(PointerEventData eventData)
