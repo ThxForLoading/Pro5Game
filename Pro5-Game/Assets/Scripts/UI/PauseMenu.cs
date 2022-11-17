@@ -15,14 +15,29 @@ namespace UI
         [SerializeField] private Button exitGame;
         
         [SerializeField] private GameObject settingsTab;
+        [SerializeField] private GameObject settingsTabStartMenu;
         [SerializeField] private GameObject controllsTab;
         [SerializeField] private GameObject menuTab;
+        [SerializeField] private GameObject menuTabStartMenu;
+
+        [SerializeField] private GameObject startMenu;
+        [SerializeField] private GameObject pauseMenu;
+        
+        private MenuState menuState = MenuState.startMenu;
+        FPEInteractionManagerScript interactionManager;
+        
+        //To Do
         
         
         
         private void Awake()
         {
             base.Awake();
+            interactionManager = FPEInteractionManagerScript.Instance;
+            pauseMenu.SetActive(false);
+            
+
+            
             if (Instance != null && Instance != this) 
             {
                 throw new Exception("There can only be one instance of PauseMenu!");
@@ -31,25 +46,49 @@ namespace UI
             { 
                 Instance = this; 
             }
-            this.gameObject.SetActive(false);
+            
         }
-        
+
+        private void Start()
+        {
+            interactionManager.openMenu();
+            deactivateAllTabs();
+        }
+
+
         public enum ButtonType
         {
             Settings,
             Controls,
             ExitGame,
-            Back
+            Back,
+            StartGame,
+            CloseGame
+        }
+
+        public enum MenuState
+        {
+            startMenu,
+            pauseMenu,
+            None
         }
     
         public override void activateMenu()
         {
-            this.gameObject.SetActive(true);
+            if (menuState != MenuState.startMenu)
+            {
+                pauseMenu.SetActive(true);
+                menuState = MenuState.pauseMenu;
+            }
         }
 
         public override void deactivateMenu()
         {
-            this.gameObject.SetActive(false);
+            if (menuState != MenuState.startMenu)
+            {
+                pauseMenu.SetActive(false);
+                menuState = MenuState.None;
+            }
         }
 
 
@@ -59,9 +98,16 @@ namespace UI
             switch (type)
             {
                 case ButtonType.Settings:
-                    // show settings
-                    settingsTab.SetActive(true);
-                    menuTab.SetActive(false);
+                    if (menuState == MenuState.startMenu)
+                    {
+                        settingsTabStartMenu.SetActive(true);
+                        menuTabStartMenu.SetActive(false);
+                    }
+                    else if(menuState == MenuState.pauseMenu)
+                    {
+                        settingsTab.SetActive(true);
+                        menuTab.SetActive(false);
+                    }
                     break;
                 case ButtonType.Controls:
                     // show controls
@@ -70,15 +116,49 @@ namespace UI
                     break;
                 case ButtonType.ExitGame:
                     // exit game
-                    print("exit game");
+                    pauseMenu.SetActive(false);
+                    startMenu.SetActive(true);
                     break;
                 case ButtonType.Back:
-                    settingsTab.SetActive(false);
-                    controllsTab.SetActive(false);
-                    menuTab.SetActive(true);
+                    deactivateAllTabs();
+                    if (menuState == MenuState.startMenu)
+                    {
+                        menuTabStartMenu.SetActive(true);
+                    }
+                    else if(menuState == MenuState.pauseMenu)
+                    {
+                        menuTab.SetActive(true);
+                    }
+
+                    break;
+                case ButtonType.CloseGame:
+                    #if UNITY_EDITOR
+                            UnityEditor.EditorApplication.isPlaying = false;
+                    #else
+                            Application.Quit();
+                    #endif
+                    break;
+                case ButtonType.StartGame:
+                    interactionManager.closeMenu();
+                    startMenu.SetActive(false);
+                    menuState = MenuState.None;
                     break;
             }
         }
+        
+        private void deactivateAllTabs()
+        {
+            settingsTab.SetActive(false);
+            controllsTab.SetActive(false);
+            settingsTabStartMenu.SetActive(false);
+        }
+        
+        // change sensitivity
+        // FPEInteractionManagerScript.Instance.changeMouseSensitivityFromMenu(changedSensitivity);
+        
+        // change volume
+        
+        // change music volume
         
         
     
