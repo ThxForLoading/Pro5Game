@@ -18,13 +18,65 @@ public class RoomChecker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentRoom == RoomLocator.Kitchen)
+        switch (currentRoom)
         {
-            roomText.text = "Kitchen";
-        }
-        if (currentRoom == RoomLocator.LivingRoom)
-        {
-            roomText.text = "LivingRoom";
+            case RoomLocator.LivingRoom:
+                roomText.text = "Living Room";
+                break;
+            case RoomLocator.Kitchen:
+                roomText.text = "Kitchen";
+                break;
+            case RoomLocator.DiningRoom:
+                roomText.text = "Dining Room";
+                break;
+            case RoomLocator.Bath:
+                roomText.text = "Bath";
+                break;
+            case RoomLocator.Bedroom:
+                roomText.text = "Bedroom";
+                break;
+            case RoomLocator.FoyerLower:
+                roomText.text = "Bottom Floor Foyer";
+                break;
+            case RoomLocator.EntranceArea:
+                roomText.text = "Entrance";
+                break;
+            case RoomLocator.Closet:
+                roomText.text = "Closet";
+                break;
+            case RoomLocator.AntiquesRoom:
+                roomText.text = "Antiques Room";
+                break;
+            case RoomLocator.HiddenRoom:
+                roomText.text = "Hidden Room?";
+                break;
+            case RoomLocator.Stairs:
+                roomText.text = "Stairway";
+                break;
+            case RoomLocator.Backroom:
+                roomText.text = "Kitchen Backroom";
+                break;
+            case RoomLocator.FoyerUpper:
+                roomText.text = "1st Floor Foyer";
+                break;
+            case RoomLocator.WC:
+                roomText.text = "Toilet";
+                break;
+            case RoomLocator.UtilityRoom:
+                roomText.text = "Utility Room";
+                break;
+            case RoomLocator.StorageRoom:
+                roomText.text = "Storage Room";
+                break;
+            case RoomLocator.FinalRoom:
+                roomText.text = "Final Room";
+                break;
+            case RoomLocator.NoRoom:
+                roomText.text = "NoRoom?";
+                break;
+            default:
+                roomText.text = "No Room?";
+                break;
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -38,22 +90,84 @@ public class RoomChecker : MonoBehaviour
     {
         LivingRoom,
         Kitchen,
+        DiningRoom,
+        Bath,
+        Bedroom,
+        FoyerLower,
+        EntranceArea,
+        Closet,
+        AntiquesRoom,
+        HiddenRoom,
+        Stairs,
+        Backroom,
+        FoyerUpper,
+        WC,
+        UtilityRoom,
+        StorageRoom,
+        FinalRoom,
         NoRoom
     }
 
     public void changeRoom(string room)
     {
-        if (room == "LivingRoom")
+
+        switch (room)
         {
-            currentRoom = RoomLocator.LivingRoom;
-            return;
+            case "LivingRoom":
+                currentRoom = RoomLocator.LivingRoom;
+                break;
+            case "Kitchen":
+                currentRoom = RoomLocator.Kitchen;
+                break;
+            case "DiningRoom":
+                currentRoom = RoomLocator.DiningRoom;
+                break;
+            case "Bath":
+                currentRoom = RoomLocator.Bath;
+                break;
+            case "Bedroom":
+                currentRoom = RoomLocator.Bedroom;
+                break;
+            case "FoyerLower":
+                currentRoom = RoomLocator.FoyerLower;
+                break;
+            case "EntranceArea":
+                currentRoom = RoomLocator.EntranceArea;
+                break;
+            case "Closet":
+                currentRoom = RoomLocator.Closet;
+                break;
+            case "AntiquesRoom":
+                currentRoom = RoomLocator.AntiquesRoom;
+                break;
+            case "HiddenRoom":
+                currentRoom = RoomLocator.HiddenRoom;
+                break;
+            case "Stairs":
+                currentRoom = RoomLocator.Stairs;
+                break;
+            case "Backroom":
+                currentRoom = RoomLocator.Backroom;
+                break;
+            case "FoyerUpper":
+                currentRoom = RoomLocator.FoyerUpper;
+                break;
+            case "WC":
+                currentRoom = RoomLocator.WC;
+                break;
+            case "UtilityRoom":
+                currentRoom = RoomLocator.UtilityRoom;
+                break;
+            case "StorageRoom":
+                currentRoom = RoomLocator.StorageRoom;
+                break;
+            case "FinalRoom":
+                currentRoom = RoomLocator.FinalRoom;
+                break;
+            default:
+                currentRoom = RoomLocator.NoRoom;
+                break;
         }
-        if (room == "Kitchen")
-        {
-            currentRoom = RoomLocator.Kitchen;
-            return;
-        }
-        currentRoom = RoomLocator.NoRoom;
 
     }
 
@@ -67,6 +181,10 @@ public class RoomChecker : MonoBehaviour
         if (currentRoom == RoomLocator.LivingRoom)
         {
             Debug.Log("Teleporting to old LivingRoom");
+        }
+        if (currentRoom == RoomLocator.DiningRoom)
+        {
+            Debug.Log("Teleporting to old Dining Room");
         }
         if (currentRoom == RoomLocator.NoRoom)
         {
