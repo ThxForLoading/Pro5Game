@@ -8,6 +8,9 @@ public class RoomChecker : MonoBehaviour
     [SerializeField] Text roomText;
     RoomLocator currentRoom = RoomLocator.NoRoom;
     GameObject player;
+    [SerializeField] GameObject[] NOWTeleportPoints;
+    [SerializeField] GameObject[] OLDTeleportPoints;
+    private bool InTheNow = true;
 
     // Start is called before the first frame update
     void Start()
@@ -110,7 +113,6 @@ public class RoomChecker : MonoBehaviour
 
     public void changeRoom(string room)
     {
-
         switch (room)
         {
             case "LivingRoom":
@@ -173,22 +175,136 @@ public class RoomChecker : MonoBehaviour
 
     private void changeTime()
     {
-        if (currentRoom == RoomLocator.Kitchen)
+        if (InTheNow)
         {
-            Debug.Log("Teleporting to old Kitchen");
-            player.transform.position = new Vector3(0, 2, 0);
+            InTheNow = false;
+
+            switch (currentRoom)
+            {
+                case RoomLocator.LivingRoom:
+                    player.transform.position = OLDTeleportPoints[0].gameObject.transform.position;
+                    break;
+                case RoomLocator.Kitchen:
+                    player.transform.position = OLDTeleportPoints[1].gameObject.transform.position;
+                    break;
+                case RoomLocator.DiningRoom:
+                    player.transform.position = OLDTeleportPoints[2].gameObject.transform.position;
+                    break;
+                case RoomLocator.Bath:
+                    player.transform.position = OLDTeleportPoints[3].gameObject.transform.position;
+                    break;
+                case RoomLocator.Bedroom:
+                    player.transform.position = OLDTeleportPoints[4].gameObject.transform.position;
+                    break;
+                case RoomLocator.FoyerLower:
+                    player.transform.position = OLDTeleportPoints[5].gameObject.transform.position;
+                    break;
+                case RoomLocator.EntranceArea:
+                    player.transform.position = OLDTeleportPoints[6].gameObject.transform.position;
+                    break;
+                case RoomLocator.Closet:
+                    player.transform.position = OLDTeleportPoints[7].gameObject.transform.position;
+                    break;
+                case RoomLocator.AntiquesRoom:
+                    player.transform.position = OLDTeleportPoints[8].gameObject.transform.position;
+                    break;
+                case RoomLocator.HiddenRoom:
+                    player.transform.position = OLDTeleportPoints[9].gameObject.transform.position;
+                    break;
+                case RoomLocator.Stairs:
+                    player.transform.position = OLDTeleportPoints[10].gameObject.transform.position;
+                    break;
+                case RoomLocator.Backroom:
+                    player.transform.position = OLDTeleportPoints[11].gameObject.transform.position;
+                    break;
+                case RoomLocator.FoyerUpper:
+                    player.transform.position = OLDTeleportPoints[12].gameObject.transform.position;
+                    break;
+                case RoomLocator.WC:
+                    player.transform.position = OLDTeleportPoints[13].gameObject.transform.position;
+                    break;
+                case RoomLocator.UtilityRoom:
+                    player.transform.position = OLDTeleportPoints[14].gameObject.transform.position;
+                    break;
+                case RoomLocator.StorageRoom:
+                    player.transform.position = OLDTeleportPoints[15].gameObject.transform.position;
+                    break;
+                case RoomLocator.FinalRoom:
+                    player.transform.position = OLDTeleportPoints[16].gameObject.transform.position;
+                    break;
+                case RoomLocator.NoRoom:
+                    Debug.Log("Something went wrong...");
+                    break;
+                default:
+                    Debug.Log("Something went wrong...");
+                    break;
+            }
         }
-        if (currentRoom == RoomLocator.LivingRoom)
+        else
         {
-            Debug.Log("Teleporting to old LivingRoom");
+            InTheNow = true;
+
+            switch (currentRoom)
+            {
+                case RoomLocator.LivingRoom:
+                    player.transform.position = NOWTeleportPoints[0].gameObject.transform.position;
+                    break;
+                case RoomLocator.Kitchen:
+                    player.transform.position = NOWTeleportPoints[1].gameObject.transform.position;
+                    break;
+                case RoomLocator.DiningRoom:
+                    player.transform.position = NOWTeleportPoints[2].gameObject.transform.position;
+                    break;
+                case RoomLocator.Bath:
+                    player.transform.position = NOWTeleportPoints[3].gameObject.transform.position;
+                    break;
+                case RoomLocator.Bedroom:
+                    player.transform.position = NOWTeleportPoints[4].gameObject.transform.position;
+                    break;
+                case RoomLocator.FoyerLower:
+                    player.transform.position = NOWTeleportPoints[5].gameObject.transform.position;
+                    break;
+                case RoomLocator.EntranceArea:
+                    player.transform.position = NOWTeleportPoints[6].gameObject.transform.position;
+                    break;
+                case RoomLocator.Closet:
+                    player.transform.position = NOWTeleportPoints[7].gameObject.transform.position;
+                    break;
+                case RoomLocator.AntiquesRoom:
+                    player.transform.position = NOWTeleportPoints[8].gameObject.transform.position;
+                    break;
+                case RoomLocator.HiddenRoom:
+                    player.transform.position = NOWTeleportPoints[9].gameObject.transform.position;
+                    break;
+                case RoomLocator.Stairs:
+                    player.transform.position = NOWTeleportPoints[10].gameObject.transform.position;
+                    break;
+                case RoomLocator.Backroom:
+                    player.transform.position = NOWTeleportPoints[11].gameObject.transform.position;
+                    break;
+                case RoomLocator.FoyerUpper:
+                    player.transform.position = NOWTeleportPoints[12].gameObject.transform.position;
+                    break;
+                case RoomLocator.WC:
+                    player.transform.position = NOWTeleportPoints[13].gameObject.transform.position;
+                    break;
+                case RoomLocator.UtilityRoom:
+                    player.transform.position = NOWTeleportPoints[14].gameObject.transform.position;
+                    break;
+                case RoomLocator.StorageRoom:
+                    player.transform.position = NOWTeleportPoints[15].gameObject.transform.position;
+                    break;
+                case RoomLocator.FinalRoom:
+                    player.transform.position = NOWTeleportPoints[16].gameObject.transform.position;
+                    break;
+                case RoomLocator.NoRoom:
+                    Debug.Log("Something went wrong...");
+                    break;
+                default:
+                    Debug.Log("Something went wrong...");
+                    break;
+            }
         }
-        if (currentRoom == RoomLocator.DiningRoom)
-        {
-            Debug.Log("Teleporting to old Dining Room");
-        }
-        if (currentRoom == RoomLocator.NoRoom)
-        {
-            Debug.Log("Something went wrong...");
-        }
+        
     }
 }
