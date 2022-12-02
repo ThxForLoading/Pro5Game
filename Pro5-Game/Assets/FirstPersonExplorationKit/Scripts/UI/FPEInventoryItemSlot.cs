@@ -134,6 +134,7 @@ namespace Whilefun.FPEKit
         /// <param name="data">The actual item data, to be read by slot so display parameters can be changed</param>
         public void setItemData(int index, FPEInventoryItemData data)
         {
+            if (data == null) return;
 
             currentInventoryDataIndex = index;
 

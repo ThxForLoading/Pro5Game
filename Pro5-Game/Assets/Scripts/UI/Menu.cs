@@ -23,6 +23,7 @@ namespace UI
         [SerializeField] private GameObject startMenu;
         [SerializeField] private GameObject pauseMenu;
         
+        private FPEInventoryItemSlot[] inventorySlots = null;
         private MenuState menuState = MenuState.startMenu;
         FPEInteractionManagerScript interactionManager;
         
@@ -36,6 +37,12 @@ namespace UI
             interactionManager = FPEInteractionManagerScript.Instance;
             pauseMenu.SetActive(false);
             
+            inventorySlots = GetComponentsInChildren<FPEInventoryItemSlot>();
+            if (inventorySlots == null)
+            {
+                Debug.LogError("Menu: No inventory slots found!");
+            }
+            updateInventorySlots();
 
             
             if (Instance != null && Instance != this) 
@@ -155,7 +162,22 @@ namespace UI
             settingsTab.SetActive(false);
             controllsTab.SetActive(false);
         }
-        
+
+        public void updateInventorySlots()
+        {
+            FPEInventoryItemData[] data = FPEInventoryManagerScript.Instance.getInventoryData();
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                if (i < data.Length)
+                {
+                    inventorySlots[i].setItemData(i, data[i]);
+                }
+                else
+                {
+                    inventorySlots[i].setItemData(i, null);
+                }
+            }
+        }
         // change sensitivity
         // FPEInteractionManagerScript.Instance.changeMouseSensitivityFromMenu(changedSensitivity);
         
