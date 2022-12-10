@@ -132,6 +132,8 @@ namespace Whilefun.FPEKit
         /// </summary>
         /// <param name="index">A "blind" index into the item data set that is used for message passing. Never manipulated by the slot itself.</param>
         /// <param name="data">The actual item data, to be read by slot so display parameters can be changed</param>
+        
+        // Called on selectItemPage im Menu
         public void setItemData(int index, FPEInventoryItemData data)
         {
             if (data == null) return;
@@ -169,16 +171,39 @@ namespace Whilefun.FPEKit
             myCount.text = stackablePrefixString + quantity;
         }
 
+        // On execute select
         private void passItemDetailsToMenu()
         {
 
             if (currentInventoryDataIndex != -1)
             {
-                FPEMenu.Instance.GetComponent<FPEGameMenu>().updateItemDataView(currentInventoryDataIndex);
+                if (FPEMenu.Instance.GetComponent<FPEGameMenu>())
+                {
+                    FPEMenu.Instance.GetComponent<FPEGameMenu>().updateItemDataView(currentInventoryDataIndex);
+                } else if (FPEMenu.Instance.GetComponent<FPEGameMenuBackup>())
+                { 
+                    FPEMenu.Instance.GetComponent<FPEGameMenuBackup>().updateItemDataView(currentInventoryDataIndex);
+                }
+                
+
             }
             else
             {
-                FPEMenu.Instance.GetComponent<FPEGameMenu>().clearItemDataView();
+                if (FPEMenu.Instance.GetComponent<FPEGameMenu>())
+                {
+                    FPEMenu.Instance.GetComponent<FPEGameMenu>().clearItemDataView();
+                } 
+                else if (FPEMenu.Instance.GetComponent<FPEGameMenuBackup>())
+                { 
+                    FPEMenu.Instance.GetComponent<FPEGameMenuBackup>().clearItemDataView();
+                }
+                else
+                {
+                    Debug.LogError("FPEInventoryItemSlot::passItemDetailsToMenu() - FPEMenu.Instance is not a FPEGameMenu or Menu!");
+                }
+                
+
+
             }
 
         }
