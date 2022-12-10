@@ -61,7 +61,7 @@ namespace Whilefun.FPEKit
 
         // Our menu tabs - will need to be updated if you add or remove tabs
         private FPEMenuTab itemsTab = null;
-        private FPEMenuTab audioDiariesTab = null;
+        //private FPEMenuTab audioDiariesTab = null;
         private FPEMenuTab notesTab = null;
         private FPEMenuTab systemTab = null;
         // Our menu tab panels - will need to be updated if you add or remove tabs
@@ -143,10 +143,10 @@ namespace Whilefun.FPEKit
                 {
                     itemsTab = menuTabs[t];
                 }
-                else if (menuTabs[t].transform.name == "AudioDiariesTab")
-                {
-                    audioDiariesTab = menuTabs[t];
-                }
+                // else if (menuTabs[t].transform.name == "AudioDiariesTab")
+                // {
+                //     audioDiariesTab = menuTabs[t];
+                // }
                 else if (menuTabs[t].transform.name == "NotesTab")
                 {
                     notesTab = menuTabs[t];
@@ -157,8 +157,9 @@ namespace Whilefun.FPEKit
                 }
 
             }
-
-            if (!itemsTab || !audioDiariesTab || !notesTab || !systemTab)
+            
+            //Removed: !audioDiariesTab ||
+            if (!itemsTab ||  !notesTab || !systemTab)
             {
                 Debug.LogError("FPEGameMenu:: Cannot find one or more of the menu tabs! Did you rename or remove them?");
             }
@@ -166,15 +167,16 @@ namespace Whilefun.FPEKit
             // Find panels  - will need to be updated if you add or remove tabs
             inventoryItemInfoPanelParent = menuCanvas.gameObject.transform.Find("InventoryItemInfoPanel").gameObject;
             inventoryItemsListPanel = menuCanvas.gameObject.transform.Find("InventoryListPanel").gameObject;
-            audioDiariesPanel = menuCanvas.gameObject.transform.Find("AudioDiariesPanel").gameObject;
+            //audioDiariesPanel = menuCanvas.gameObject.transform.Find("AudioDiariesPanel").gameObject;
             notesPanel = menuCanvas.gameObject.transform.Find("NotesPanel").gameObject;
             noteContentsPanelParent = menuCanvas.gameObject.transform.Find("NoteContentsPanel").gameObject;
             systemPanel = menuCanvas.gameObject.transform.Find("SystemPanel").gameObject;
             exitConfirmationPanel = menuCanvas.gameObject.transform.Find("ExitConfirmationPanel").gameObject;
             actionsPanelParent = menuCanvas.gameObject.transform.Find("InventoryActionsPanel").gameObject;
             pageControlPanel = menuCanvas.gameObject.transform.Find("PageControlsPanel").gameObject;
-
-            if (!inventoryItemInfoPanelParent || !inventoryItemsListPanel || !audioDiariesPanel || !notesPanel || !noteContentsPanelParent || !systemPanel || !actionsPanelParent || !pageControlPanel)
+            
+            // Removed: || !audioDiariesPanel
+            if (!inventoryItemInfoPanelParent || !inventoryItemsListPanel  || !notesPanel || !noteContentsPanelParent || !systemPanel || !actionsPanelParent || !pageControlPanel)
             {
                 Debug.LogError("FPEGameMenu:: Cannot find one or more of the menu panels! Did you rename or remove them?");
             }
@@ -205,13 +207,13 @@ namespace Whilefun.FPEKit
             }
 
             // Audio diary slots (we should have more than one of these as well)
-            audioDiariesPanel.SetActive(true);
-            audioDiarySlots = menuCanvas.gameObject.GetComponentsInChildren<FPEAudioDiaryEntrySlot>();
-
-            if (audioDiarySlots == null || audioDiarySlots.Length < 2)
-            {
-                Debug.LogError("FPEGameMenu:: There are 1 or fewer audio diary slots on the audio diary panel! Things will break.");
-            }
+            //audioDiariesPanel.SetActive(true);
+            // audioDiarySlots = menuCanvas.gameObject.GetComponentsInChildren<FPEAudioDiaryEntrySlot>();
+            //
+            // if (audioDiarySlots == null || audioDiarySlots.Length < 2)
+            // {
+            //     Debug.LogError("FPEGameMenu:: There are 1 or fewer audio diary slots on the audio diary panel! Things will break.");
+            // }
 
             // Note slots (we should have more than one of these as well)
             notesPanel.SetActive(true);
@@ -261,7 +263,7 @@ namespace Whilefun.FPEKit
             // items per page and previous page selections for each tab
             itemsPerPage = new int[Enum.GetNames(typeof(eMenuTab)).Length];
             itemsPerPage[(int)eMenuTab.ITEMS] = inventorySlots.Length;
-            itemsPerPage[(int)eMenuTab.AUDIO_DIARIES] = audioDiarySlots.Length;
+            //itemsPerPage[(int)eMenuTab.AUDIO_DIARIES] = audioDiarySlots.Length;
             itemsPerPage[(int)eMenuTab.NOTES] = noteSlots.Length;
 
             previouslySelectedPage = new int[Enum.GetNames(typeof(eMenuTab)).Length];
@@ -270,7 +272,7 @@ namespace Whilefun.FPEKit
 
             previouslySelectedTab = eMenuTab.ITEMS;
             previouslySelectedItemSlot = inventorySlots[0];
-            previouslySelectedAudioDiarySlot = audioDiarySlots[0];
+            //previouslySelectedAudioDiarySlot = audioDiarySlots[0];
             previouslySelectedNoteSlotIndex = -1;
 
         }
@@ -329,13 +331,13 @@ namespace Whilefun.FPEKit
                 }
 
                 // Allow player to stop all diaries wihtout having to select and "click" stop button (e.g. gamepad)
-                if (audioDiariesPanel.activeSelf)
-                {
-                    if (FPEInputManager.Instance.GetButtonDown(FPEInputManager.eFPEInput.FPE_INPUT_CLOSE))
-                    {
-                        stopAllDiaries();
-                    }
-                }
+                // if (audioDiariesPanel.activeSelf)
+                // {
+                //     if (FPEInputManager.Instance.GetButtonDown(FPEInputManager.eFPEInput.FPE_INPUT_CLOSE))
+                //     {
+                //         stopAllDiaries();
+                //     }
+                // }
 
                 if (elementToJiggle)
                 {
@@ -579,7 +581,7 @@ namespace Whilefun.FPEKit
             // And De-activate ALL panels
             inventoryItemsListPanel.SetActive(false);
             inventoryItemInfoPanelParent.SetActive(false);
-            audioDiariesPanel.SetActive(false);
+            //audioDiariesPanel.SetActive(false);
             notesPanel.SetActive(false);
             noteContentsPanelParent.SetActive(false);
             systemPanel.SetActive(false);
@@ -600,13 +602,13 @@ namespace Whilefun.FPEKit
                     restoreSelectedItemSlot();
                     break;
 
-                case eMenuTab.AUDIO_DIARIES:
-                    audioDiariesTab.ForceSelectTab();
-                    refreshAudioDiarySlotsView();
-                    audioDiariesPanel.SetActive(true);
-                    pageControlPanel.SetActive(true);
-                    restoreSelectedAudioDiarySlot();
-                    break;
+                // case eMenuTab.AUDIO_DIARIES:
+                //     audioDiariesTab.ForceSelectTab();
+                //     refreshAudioDiarySlotsView();
+                //     audioDiariesPanel.SetActive(true);
+                //     pageControlPanel.SetActive(true);
+                //     restoreSelectedAudioDiarySlot();
+                //     break;
 
                 case eMenuTab.NOTES:
                     notesTab.ForceSelectTab();
