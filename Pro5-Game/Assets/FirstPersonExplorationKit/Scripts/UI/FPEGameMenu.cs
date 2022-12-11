@@ -107,7 +107,7 @@ namespace Whilefun.FPEKit
         private float minSensitivity = 0.5f;
         [SerializeField, Tooltip("Maximum allowed mouse sensitivity value")]
         private float maxSensitivity = 32.0f;
-        private Text mouseSensitivityValueText = null;
+        //private Text mouseSensitivityValueText = null;
         private FPEMenuToggle lookSmoothingToggle = null;
         private FPEMenuToggle useGamepadToggle = null;
         private FPEMenuButton loadGameButton = null;
@@ -237,15 +237,16 @@ namespace Whilefun.FPEKit
             systemButtons = systemPanel.gameObject.GetComponentsInChildren<FPEMenuButton>();
             exitConfirmationPanel.SetActive(true);
             exitConfirmationButtons = exitConfirmationPanel.gameObject.GetComponentsInChildren<FPEMenuButton>();
-            mouseSensitivityValueText = systemPanel.gameObject.transform.Find("MouseSensitivityValue").GetComponent<Text>();
-            lookSmoothingToggle = systemPanel.gameObject.transform.Find("LookSmoothingToggle").GetComponent<FPEMenuToggle>();
-            useGamepadToggle = systemPanel.gameObject.transform.Find("UseGamepadToggle").GetComponent<FPEMenuToggle>();
-            loadGameButton = systemPanel.gameObject.transform.Find("LoadGameButton").GetComponent<FPEMenuButton>();
-
-            if (!mouseSensitivityValueText || !lookSmoothingToggle || !useGamepadToggle || !loadGameButton)
-            {
-                Debug.LogError("FPEGameMenu:: mouseSensitivityValue Text, smoothing or gamepad toggle, or load game button component(s) are missing! Did you remove them?");
-            }
+            //mouseSensitivityValueText = systemPanel.gameObject.transform.Find("MouseSensitivityValue").GetComponent<Text>();
+            //lookSmoothingToggle = systemPanel.gameObject.transform.Find("LookSmoothingToggle").GetComponent<FPEMenuToggle>();
+            //useGamepadToggle = systemPanel.gameObject.transform.Find("UseGamepadToggle").GetComponent<FPEMenuToggle>();
+            //loadGameButton = systemPanel.gameObject.transform.Find("LoadGameButton").GetComponent<FPEMenuButton>();
+            
+            //Removed: || !lookSmoothingToggle || !useGamepadToggle  || !loadGameButton
+            // if (!mouseSensitivityValueText)
+            // {
+            //     Debug.LogError("FPEGameMenu:: mouseSensitivityValue Text, smoothing or gamepad toggle, or load game button component(s) are missing! Did you remove them?");
+            // }
 
             // Find Previous/Next page buttons and hints
             pageControlPanel.SetActive(true);
@@ -1082,21 +1083,21 @@ namespace Whilefun.FPEKit
                     FPESaveLoadManager.Instance.LoadGameOptions();
                 }
 
-                myEventSystem.SetSelectedGameObject(systemButtons[0].gameObject);
+                //myEventSystem.SetSelectedGameObject(systemButtons[0].gameObject);
                 refreshOptionsValues();
 
                 // Also check if there is a saved game. If there is not, we want to disable the load game button.
-                if (FPESaveLoadManager.Instance != null)
-                {
-                    if (FPESaveLoadManager.Instance.SavedGameExists())
-                    {
-                        loadGameButton.enableButton();
-                    }
-                    else
-                    {
-                        loadGameButton.disableButton();
-                    }
-                }
+                // if (FPESaveLoadManager.Instance != null)
+                // {
+                //     if (FPESaveLoadManager.Instance.SavedGameExists())
+                //     {
+                //         loadGameButton.enableButton();
+                //     }
+                //     else
+                //     {
+                //         loadGameButton.disableButton();
+                //     }
+                // }
 
             }
 
@@ -1134,7 +1135,8 @@ namespace Whilefun.FPEKit
 
             exitConfirmationPanel.SetActive(false);
             // When returning to menu, assume that we should re-highlight the exit button
-            myEventSystem.SetSelectedGameObject(systemButtons[systemButtons.Length-1].gameObject);
+            // Removed... There are no more System buttons
+            //myEventSystem.SetSelectedGameObject(systemButtons[systemButtons.Length-1].gameObject);
 
         }
 
@@ -1170,9 +1172,9 @@ namespace Whilefun.FPEKit
         private void refreshOptionsValues()
         {
 
-            mouseSensitivityValueText.text = FPEInputManager.Instance.LookSensitivity.x.ToString("n1");
-            lookSmoothingToggle.ForceToggleState(FPEInputManager.Instance.LookSmoothing);
-            useGamepadToggle.ForceToggleState(FPEInputManager.Instance.UseGamepad);
+            //mouseSensitivityValueText.text = FPEInputManager.Instance.LookSensitivity.x.ToString("n1");
+            //lookSmoothingToggle.ForceToggleState(FPEInputManager.Instance.LookSmoothing);
+            //useGamepadToggle.ForceToggleState(FPEInputManager.Instance.UseGamepad);
 
             // Always save options when they are changed - assumes they are refreshed using this function when changed from UI.
             if (FPESaveLoadManager.Instance != null)

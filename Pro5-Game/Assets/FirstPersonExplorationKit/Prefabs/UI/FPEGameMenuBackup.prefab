@@ -254,7 +254,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: moveToPreviousPage
         m_Mode: 1
@@ -574,7 +574,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: stopAllDiaries
         m_Mode: 1
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: changeMenuTabTo
         m_Mode: 3
@@ -2081,7 +2081,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: performConsumeAction
         m_Mode: 1
@@ -2726,7 +2726,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: exitGameButtonPressed
         m_Mode: 1
@@ -3272,7 +3272,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: changeMenuTabTo
         m_Mode: 3
@@ -3573,7 +3573,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: changeMouseSensitivity
         m_Mode: 4
@@ -4422,7 +4422,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: changeMenuTabTo
         m_Mode: 3
@@ -5948,7 +5948,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: LoadGame
         m_Mode: 1
@@ -6515,7 +6515,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: hideExitConfirmation
         m_Mode: 1
@@ -7002,7 +7002,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: changeMouseSensitivity
         m_Mode: 4
@@ -8590,7 +8590,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: hideActionsForItem
         m_Mode: 1
@@ -9633,7 +9633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4293028535013376}
-  - component: {fileID: 114372449583772724}
+  - component: {fileID: 8053541567392712572}
   - component: {fileID: 82182801050172772}
   m_Layer: 0
   m_Name: FPEGameMenuBackup
@@ -9658,7 +9658,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114372449583772724
+--- !u!114 &8053541567392712572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9667,7 +9667,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654281138379446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65a198a55d41234cbb9b7148131fb7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2645b30e964b04cbcb3c5828909f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuOpen: {fileID: 8300000, guid: dad78cd7b8224e442ac1a1bb74856c3a, type: 3}
@@ -9907,7 +9907,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: moveToNextPage
         m_Mode: 1
@@ -10978,7 +10978,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SaveGame
         m_Mode: 1
@@ -11215,7 +11215,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: performDropAction
         m_Mode: 1
@@ -11535,7 +11535,7 @@ MonoBehaviour:
   ToggleOnEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: toggleLookSmoothing
         m_Mode: 6
@@ -11550,7 +11550,7 @@ MonoBehaviour:
   ToggleOffEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: toggleLookSmoothing
         m_Mode: 6
@@ -12451,7 +12451,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: performHoldAction
         m_Mode: 1
@@ -12685,7 +12685,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: changeMenuTabTo
         m_Mode: 3
@@ -13469,7 +13469,7 @@ MonoBehaviour:
   ToggleOnEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: toggleUseGamepad
         m_Mode: 6
@@ -13484,7 +13484,7 @@ MonoBehaviour:
   ToggleOffEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: toggleUseGamepad
         m_Mode: 6
@@ -14672,7 +14672,7 @@ MonoBehaviour:
   OnClickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114372449583772724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: showExitConfirmation
         m_Mode: 1
