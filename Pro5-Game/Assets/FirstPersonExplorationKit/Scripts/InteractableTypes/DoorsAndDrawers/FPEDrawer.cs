@@ -413,7 +413,7 @@ namespace Whilefun.FPEKit
 
         }
 
-        private void openTheDrawer()
+        public void openTheDrawer()
         {
 
             needToMovePlayerToSafeZone = true;

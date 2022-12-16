@@ -255,7 +255,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   putbackRepeatMode: 0
-  inventoryItemType: 6
+  inventoryItemType: 7
   inventoryQuantity: 1
   inventoryGetSound: {fileID: 0}
   pickupPermitted: 1
