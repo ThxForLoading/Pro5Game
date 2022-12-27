@@ -10,6 +10,7 @@ public class RoomChecker : MonoBehaviour
     GameObject player;
     [SerializeField] GameObject[] NOWTeleportPoints;
     [SerializeField] GameObject[] OLDTeleportPoints;
+    [SerializeField] Image hue;
     private bool InTheNow = true;
 
     void Start()
@@ -84,6 +85,15 @@ public class RoomChecker : MonoBehaviour
         {
             Debug.Log("Changing Times");
             changeTime();
+        }
+
+        if (!InTheNow)
+        {
+            hue.enabled = true;
+        }
+        else
+        {
+            hue.enabled = false;
         }
     }
 
