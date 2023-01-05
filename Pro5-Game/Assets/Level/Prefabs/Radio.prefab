@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 5319057304595299379}
   - component: {fileID: 2003665621968066265}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: RadioPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

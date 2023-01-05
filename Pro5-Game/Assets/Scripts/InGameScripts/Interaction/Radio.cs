@@ -33,7 +33,7 @@ public class Radio : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        pointer = GameObject.Find("Pointer");
+        pointer = GameObject.Find("RadioPointer");
         pointerMinPos = GameObject.Find("PointerMinPos").transform;
         pointerMaxPos = GameObject.Find("PointerMaxPos").transform;
         changePointerPos();
