@@ -13,9 +13,12 @@ public class RoomChecker : MonoBehaviour
     [SerializeField] Image hue;
     private bool InTheNow = true;
 
+    GameObject clockChecker;
+
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); 
+        player = GameObject.FindGameObjectWithTag("Player");
+        clockChecker = GameObject.FindGameObjectWithTag("ClockCheck");
     }
 
     void Update()
@@ -81,7 +84,7 @@ public class RoomChecker : MonoBehaviour
                 break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && clockChecker.GetComponent<ClockEnabler>().clock)
         {
             Debug.Log("Changing Times");
             changeTime();

@@ -28,6 +28,7 @@ namespace Whilefun.FPEKit {
             SIMPLEKEY = 5,
             ENTRANCEKEY = 6,
             TURNKEY = 7,
+            SCISSORS = 8,
 
         };
 
