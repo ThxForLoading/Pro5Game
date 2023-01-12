@@ -20,14 +20,14 @@ public class CuttableWall : MonoBehaviour
         
     }
 
-    public void spawnKey()
+    public void SpawnKey()
     {
         Debug.Log("Spawn Key");
         Instantiate(prefab, spawn.transform);
         overlay.SetActive(true);
     }
 
-    public void noReaction()
+    public void NoReaction()
     {
         Debug.Log("Nothing happened");
     }

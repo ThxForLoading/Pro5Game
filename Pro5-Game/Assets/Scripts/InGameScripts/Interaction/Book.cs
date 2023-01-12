@@ -19,21 +19,21 @@ public class Book : FPEInteractableActivateScript
     }
     
 
-    public void interactBook()
+    public void InteractBook()
     {
         if (isIndented) return;
         if (!BookShelf.isActive) return;
-        indentBook();
+        IndentBook();
         isIndented = true;
-        bookShelf.checkOpenCondition(bookID, this);
+        bookShelf.CheckOpenCondition(bookID, this);
     }
 
-    public void indentBook()
+    public void IndentBook()
     {
         transform.Translate(Vector3.right * indentDistance);
     }
 
-    public void restoreBookPos()
+    public void RestoreBookPos()
     {
         transform.Translate(Vector3.right * -indentDistance);
         isIndented = false;

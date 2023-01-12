@@ -327,7 +327,7 @@ namespace Whilefun.FPEKit
                     // Only allow Put Back if we're holding an object and not currently examining it
                     if (!examiningObject && hitPutBack2.transform != null && hitPutBack2.transform.gameObject.GetComponent<FPEPutBackScript>() && currentHeldObject != null)
                     {
-
+                        // place on put back location
                         if (hitPutBack2.transform.gameObject.GetComponent<FPEPutBackScript>().putBackMatchesGameObject(currentHeldObject) && (hitPutBack2.distance < hitPutBack2.transform.gameObject.GetComponent<FPEPutBackScript>().getInteractionDistance()))
                         {
                             currentPutbackObject = hitPutBack2.transform.gameObject;
@@ -398,6 +398,14 @@ namespace Whilefun.FPEKit
                             {
                                 t.gameObject.layer = LayerMask.NameToLayer("FPEPickupObjects");
                             }
+
+                            if (currentHeldObject.GetComponent<PutBackPickup>() && currentPutbackObject.GetComponent<PutBackSpot>())
+                            {
+                                print("Put Back Action");
+                                currentPutbackObject.GetComponent<PutBackSpot>()
+                                    .PlaceObject(currentHeldObject.GetComponent<PutBackPickup>().GetPlacementID());
+                            }
+
 
                             currentHeldObject = null;
                             currentPutbackObject = null;

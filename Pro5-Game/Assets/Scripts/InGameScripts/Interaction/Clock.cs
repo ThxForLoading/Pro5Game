@@ -22,7 +22,7 @@ public class Clock : FPEInteractableActivateScript
         hourPointerBase = GameObject.Find("HourPointerBase");
     }
 
-    public void turnClock()
+    public void TurnClock()
     {
         pointerBase.transform.Rotate(0, rotationPerAction, 0);
         hourPointerBase.transform.Rotate(0, rotationPerAction / 60f, 0);

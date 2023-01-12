@@ -17,7 +17,7 @@ public class WatchScript : MonoBehaviour
         
     }
 
-    public void gainTimePower()
+    public void GainTimePower()
     {
         clockChecker.GetComponent<ClockEnabler>().setClockActive();
         Destroy(gameObject);

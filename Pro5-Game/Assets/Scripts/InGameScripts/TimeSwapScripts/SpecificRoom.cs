@@ -12,7 +12,7 @@ public class SpecificRoom : MonoBehaviour
         if (other.tag == "Player")
         {
             roomChecker.GetComponent<RoomChecker>().changeRoom(room.ToString());
-            Debug.Log(room.ToString() + " entered");
+            //Debug.Log(room.ToString() + " entered");
         }
     }
 

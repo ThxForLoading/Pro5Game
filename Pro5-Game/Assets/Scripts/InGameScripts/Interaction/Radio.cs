@@ -36,35 +36,35 @@ public class Radio : MonoBehaviour
         pointer = GameObject.Find("RadioPointer");
         pointerMinPos = GameObject.Find("PointerMinPos").transform;
         pointerMaxPos = GameObject.Find("PointerMaxPos").transform;
-        changePointerPos();
+        ChangePointerPos();
     }
 
 
-    public void decreaseFreq()
+    public void DecreaseFreq()
     {
         if (currentFreq == minFreq) return;
         currentFreq -= freqStep;
         print("Decr Freq: " + currentFreq);
-        checkFreq();
-        changePointerPos();
+        CheckFreq();
+        ChangePointerPos();
     }
     
-    public void increaseFreq()
+    public void IncreaseFreq()
     {
         if (currentFreq == maxFreq) return;
         currentFreq += freqStep;
         print("Incr Freq" + currentFreq);
-        checkFreq();
-        changePointerPos();
+        CheckFreq();
+        ChangePointerPos();
     }
 
-    public void changePointerPos()
+    public void ChangePointerPos()
     {
         float pointerPos = (float)currentFreq / (float)maxFreq;
         pointer.transform.position = Vector3.Lerp(pointerMinPos.position, pointerMaxPos.position, pointerPos);
     }
 
-    private void checkFreq()
+    private void CheckFreq()
     {
 
         if (currentFreq == goalFreq1)

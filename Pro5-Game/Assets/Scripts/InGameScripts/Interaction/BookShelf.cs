@@ -10,7 +10,7 @@ public class BookShelf : MonoBehaviour
     public static bool isActive = true;
     
     [SerializeField] private int numberBooks = 4;
-    private  int[] bookIDS = new int[4];
+    private  int[] bookIds = new int[4];
 
     private  bool sequenceCorrect = true;
     private  int checkID = 0;
@@ -23,7 +23,7 @@ public class BookShelf : MonoBehaviour
     }
 
 
-    public void checkOpenCondition(int bookID, Book curBook)
+    public void CheckOpenCondition(int bookID, Book curBook)
     {
         print("check open cond");
         books[checkID] = curBook;
@@ -38,23 +38,23 @@ public class BookShelf : MonoBehaviour
         // win condition
         if (checkID == numberBooks && sequenceCorrect)
         {
-            openDoor();
+            OpenDoor();
             isActive = false;
         }
         
         // loose condition
         if (checkID == numberBooks && !sequenceCorrect)
         {
-            executeLoose();
+            ExecuteLoose();
         }
     }
 
-    private void executeLoose()
+    private void ExecuteLoose()
     {
         print("Loose");
         foreach (Book book in books)
         {
-            book.restoreBookPos();
+            book.RestoreBookPos();
         }
 
         books = new Book[numberBooks];
@@ -62,7 +62,7 @@ public class BookShelf : MonoBehaviour
         checkID = 0;
     }
 
-    private void openDoor()
+    private void OpenDoor()
     {
         transform.Rotate(0f,90f,0f);
         isActive = false;
