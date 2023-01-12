@@ -231,7 +231,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2428638237376926054}
         m_TargetAssemblyTypeName: Clock, Assembly-CSharp
-        m_MethodName: turnClock
+        m_MethodName: TurnClock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -253,7 +253,6 @@ MonoBehaviour:
   toggleOnAtStart: 0
   toggleOffAtStart: 0
   fireToggleEventsOnLoadGame: 1
-  rotationGoal: 120
   drawer: {fileID: 0}
   drawerOpen: {fileID: 0}
 --- !u!1 &3202932543822565289
