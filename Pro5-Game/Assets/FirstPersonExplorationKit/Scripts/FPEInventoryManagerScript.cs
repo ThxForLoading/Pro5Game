@@ -29,6 +29,7 @@ namespace Whilefun.FPEKit {
             ENTRANCEKEY = 6,
             TURNKEY = 7,
             SCISSORS = 8,
+            HAMMER = 9,
 
         };
 
