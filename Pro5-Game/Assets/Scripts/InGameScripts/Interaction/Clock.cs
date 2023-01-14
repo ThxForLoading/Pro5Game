@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Whilefun.FPEKit;
 
-public class Clock : FPEInteractableActivateScript
+public class Clock : MonoBehaviour
 {
 
     [SerializeField] private FPEDrawer drawer;
@@ -15,25 +15,29 @@ public class Clock : FPEInteractableActivateScript
     private float currentRotation = 0.0f;
     
     
-    public override void Awake()
+    public void Awake()
     {
-        base.Awake();
         pointerBase = GameObject.Find("PointerBase");
         hourPointerBase = GameObject.Find("HourPointerBase");
     }
 
-    public void TurnClock()
+    public void TurnClock(bool turnForward)
     {
-        pointerBase.transform.Rotate(0, rotationPerAction, 0);
-        hourPointerBase.transform.Rotate(0, rotationPerAction / 60f, 0);
-        currentRotation += rotationPerAction;
+        if (turnForward)
+        {
+            pointerBase.transform.Rotate(0, rotationPerAction, 0);
+            hourPointerBase.transform.Rotate(0, rotationPerAction / 12f, 0);
+            currentRotation += rotationPerAction;
+        }
+        else
+        {
+            pointerBase.transform.Rotate(0, -rotationPerAction, 0);
+            hourPointerBase.transform.Rotate(0, -rotationPerAction / 12f, 0);
+            currentRotation -= rotationPerAction;
+        }
         
-        
-        // pointerBase.transform.rotation = Quaternion.Lerp(
-        //     pointerBase.transform.rotation, 
-        //     Quaternion.Euler(0, pointerBase.transform.eulerAngles.y + rotationPerAction, 0),
-        //     0.4f);
-        
+
+
         float diff = rotationGoal - currentRotation;
         if ( diff < 0.1f && diff > -0.1f)
         {
