@@ -83,11 +83,15 @@ public class RoomChecker : MonoBehaviour
                 roomText.text = "No Room?";
                 break;
         }
+        
+         
 
         if (Input.GetKeyDown(KeyCode.Q) && clockChecker.GetComponent<ClockEnabler>().clock)
         {
             Debug.Log("Changing Times");
-            changeTime();
+            
+            Fader.fader.CrossFade(changeTime);
+            
         }
 
         if (!InTheNow)
