@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class RoomChecker : MonoBehaviour
@@ -10,7 +11,10 @@ public class RoomChecker : MonoBehaviour
     GameObject player;
     [SerializeField] GameObject[] NOWTeleportPoints;
     [SerializeField] GameObject[] OLDTeleportPoints;
-    [SerializeField] Image hue;
+    [SerializeField] private PostProcessProfile pppNow;
+    [SerializeField] private PostProcessProfile pppPast;
+    private PostProcessVolume volume;
+    
     private bool InTheNow = true;
 
     GameObject clockChecker;
@@ -19,6 +23,7 @@ public class RoomChecker : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         clockChecker = GameObject.FindGameObjectWithTag("ClockCheck");
+        volume = FindObjectOfType<PostProcessVolume>();
     }
 
     void Update()
@@ -84,9 +89,10 @@ public class RoomChecker : MonoBehaviour
                 break;
         }
         
-         
+         // Enable before build!
+        // && clockChecker.GetComponent<ClockEnabler>().clock
 
-        if (Input.GetKeyDown(KeyCode.Q) && clockChecker.GetComponent<ClockEnabler>().clock)
+        if (Input.GetKeyDown(KeyCode.Q) )
         {
             Debug.Log("Changing Times");
             
@@ -96,11 +102,11 @@ public class RoomChecker : MonoBehaviour
 
         if (!InTheNow)
         {
-            hue.enabled = true;
+            volume.profile = pppPast;
         }
         else
         {
-            hue.enabled = false;
+            volume.profile = pppNow;
         }
     }
 
