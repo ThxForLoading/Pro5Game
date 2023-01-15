@@ -163,7 +163,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -26
+    value: -48
   tint:
     overrideState: 0
     value: 0
