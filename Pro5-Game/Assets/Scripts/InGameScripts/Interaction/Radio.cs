@@ -14,6 +14,7 @@ public class Radio : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [SerializeField] private int startFreq = 100;
     [SerializeField] private int goalFreq1 = 100;
     [SerializeField] private int goalFreq2;
     [SerializeField] private int goalFreq3;
@@ -26,12 +27,13 @@ public class Radio : MonoBehaviour
     private int maxFreq = 200;
     private int minFreq = 0;
     private int freqStep = 5;
-    private int currentFreq = 100;
+    private int currentFreq;
     
     
 
     private void Awake()
     {
+        currentFreq = startFreq;
         audioSource = GetComponent<AudioSource>();
         pointer = GameObject.Find("RadioPointer");
         pointerMinPos = GameObject.Find("PointerMinPos").transform;
