@@ -62,14 +62,14 @@ namespace Whilefun.FPEKit
         // Our menu tabs - will need to be updated if you add or remove tabs
         private FPEMenuTab itemsTab = null;
         //private FPEMenuTab audioDiariesTab = null;
-        private FPEMenuTab notesTab = null;
+        //private FPEMenuTab notesTab = null;
         private FPEMenuTab systemTab = null;
         // Our menu tab panels - will need to be updated if you add or remove tabs
         private GameObject inventoryItemsListPanel = null;
         private GameObject inventoryItemInfoPanelParent = null;
         private FPEInventoryItemInfoPanel itemInfoPanel = null;
         private GameObject audioDiariesPanel = null;
-        private GameObject notesPanel = null;
+        //private GameObject notesPanel = null;
         private GameObject noteContentsPanelParent = null;
         private FPENoteContentsPanel noteContentsPanel = null;
         private GameObject systemPanel = null;
@@ -81,7 +81,7 @@ namespace Whilefun.FPEKit
         // Panels and slots of different types //
         private FPEInventoryItemSlot[] inventorySlots = null;
         private FPEAudioDiaryEntrySlot[] audioDiarySlots = null;
-        private FPENoteEntrySlot[] noteSlots = null;
+        //private FPENoteEntrySlot[] noteSlots = null;
         private FPEMenuButton[] systemButtons = null;
         private FPEMenuButton[] exitConfirmationButtons = null;
 
@@ -97,7 +97,7 @@ namespace Whilefun.FPEKit
         private FPEInventoryItemSlot previouslySelectedItemSlot = null;
         private int slotActionItemIndex = -1;
         private FPEAudioDiaryEntrySlot previouslySelectedAudioDiarySlot = null;
-        private int previouslySelectedNoteSlotIndex = 0;
+        //private int previouslySelectedNoteSlotIndex = 0;
 
         private int[] itemsPerPage = null;
         private int[] previouslySelectedPage = null;
@@ -147,10 +147,10 @@ namespace Whilefun.FPEKit
                 // {
                 //     audioDiariesTab = menuTabs[t];
                 // }
-                else if (menuTabs[t].transform.name == "NotesTab")
-                {
-                    notesTab = menuTabs[t];
-                }
+                // else if (menuTabs[t].transform.name == "NotesTab")
+                // {
+                //     notesTab = menuTabs[t];
+                // }
                 else if (menuTabs[t].transform.name == "SystemTab")
                 {
                     systemTab = menuTabs[t];
@@ -158,8 +158,8 @@ namespace Whilefun.FPEKit
 
             }
             
-            //Removed: !audioDiariesTab ||
-            if (!itemsTab ||  !notesTab || !systemTab)
+            //Removed: !audioDiariesTab || ||  !notesTab
+            if (!itemsTab  || !systemTab)
             {
                 Debug.LogError("FPEGameMenu:: Cannot find one or more of the menu tabs! Did you rename or remove them?");
             }
@@ -168,15 +168,15 @@ namespace Whilefun.FPEKit
             inventoryItemInfoPanelParent = menuCanvas.gameObject.transform.Find("InventoryItemInfoPanel").gameObject;
             inventoryItemsListPanel = menuCanvas.gameObject.transform.Find("InventoryListPanel").gameObject;
             //audioDiariesPanel = menuCanvas.gameObject.transform.Find("AudioDiariesPanel").gameObject;
-            notesPanel = menuCanvas.gameObject.transform.Find("NotesPanel").gameObject;
+            //notesPanel = menuCanvas.gameObject.transform.Find("NotesPanel").gameObject;
             noteContentsPanelParent = menuCanvas.gameObject.transform.Find("NoteContentsPanel").gameObject;
             systemPanel = menuCanvas.gameObject.transform.Find("SystemPanel").gameObject;
             exitConfirmationPanel = menuCanvas.gameObject.transform.Find("ExitConfirmationPanel").gameObject;
             actionsPanelParent = menuCanvas.gameObject.transform.Find("InventoryActionsPanel").gameObject;
             pageControlPanel = menuCanvas.gameObject.transform.Find("PageControlsPanel").gameObject;
             
-            // Removed: || !audioDiariesPanel
-            if (!inventoryItemInfoPanelParent || !inventoryItemsListPanel  || !notesPanel || !noteContentsPanelParent || !systemPanel || !actionsPanelParent || !pageControlPanel)
+            // Removed: || !audioDiariesPanel || !notesPanel
+            if (!inventoryItemInfoPanelParent || !inventoryItemsListPanel   || !noteContentsPanelParent || !systemPanel || !actionsPanelParent || !pageControlPanel)
             {
                 Debug.LogError("FPEGameMenu:: Cannot find one or more of the menu panels! Did you rename or remove them?");
             }
@@ -216,13 +216,13 @@ namespace Whilefun.FPEKit
             // }
 
             // Note slots (we should have more than one of these as well)
-            notesPanel.SetActive(true);
-            noteSlots = menuCanvas.gameObject.GetComponentsInChildren<FPENoteEntrySlot>();
-
-            if(noteSlots == null || noteSlots.Length < 2)
-            {
-                Debug.LogError("FPEGameMenu:: There are 1 or fewer note slots on the notes panel! Things will break.");
-            }
+            // notesPanel.SetActive(true);
+            // noteSlots = menuCanvas.gameObject.GetComponentsInChildren<FPENoteEntrySlot>();
+            //
+            // if(noteSlots == null || noteSlots.Length < 2)
+            // {
+            //     Debug.LogError("FPEGameMenu:: There are 1 or fewer note slots on the notes panel! Things will break.");
+            // }
 
             noteContentsPanelParent.SetActive(true);
             noteContentsPanel = noteContentsPanelParent.GetComponent<FPENoteContentsPanel>();
@@ -265,7 +265,7 @@ namespace Whilefun.FPEKit
             itemsPerPage = new int[Enum.GetNames(typeof(eMenuTab)).Length];
             itemsPerPage[(int)eMenuTab.ITEMS] = inventorySlots.Length;
             //itemsPerPage[(int)eMenuTab.AUDIO_DIARIES] = audioDiarySlots.Length;
-            itemsPerPage[(int)eMenuTab.NOTES] = noteSlots.Length;
+            //itemsPerPage[(int)eMenuTab.NOTES] = noteSlots.Length;
 
             previouslySelectedPage = new int[Enum.GetNames(typeof(eMenuTab)).Length];
             previouslySelectedPage[(int)eMenuTab.ITEMS] = 0;
@@ -274,7 +274,7 @@ namespace Whilefun.FPEKit
             previouslySelectedTab = eMenuTab.ITEMS;
             previouslySelectedItemSlot = inventorySlots[0];
             //previouslySelectedAudioDiarySlot = audioDiarySlots[0];
-            previouslySelectedNoteSlotIndex = -1;
+            //previouslySelectedNoteSlotIndex = -1;
 
         }
 
@@ -583,7 +583,7 @@ namespace Whilefun.FPEKit
             inventoryItemsListPanel.SetActive(false);
             inventoryItemInfoPanelParent.SetActive(false);
             //audioDiariesPanel.SetActive(false);
-            notesPanel.SetActive(false);
+            //notesPanel.SetActive(false);
             noteContentsPanelParent.SetActive(false);
             systemPanel.SetActive(false);
             exitConfirmationPanel.SetActive(false);
@@ -611,14 +611,14 @@ namespace Whilefun.FPEKit
                 //     restoreSelectedAudioDiarySlot();
                 //     break;
 
-                case eMenuTab.NOTES:
-                    notesTab.ForceSelectTab();
-                    refreshNoteSlotsView();
-                    notesPanel.SetActive(true);
-                    noteContentsPanelParent.SetActive(true);
-                    pageControlPanel.SetActive(true);
-                    //restoreSelectedNoteSlot();
-                    break;
+                // case eMenuTab.NOTES:
+                //     notesTab.ForceSelectTab();
+                //     refreshNoteSlotsView();
+                //     notesPanel.SetActive(true);
+                //     noteContentsPanelParent.SetActive(true);
+                //     pageControlPanel.SetActive(true);
+                //     //restoreSelectedNoteSlot();
+                //     break;
 
                 case eMenuTab.SYSTEM:
                     systemTab.ForceSelectTab();
@@ -962,109 +962,109 @@ namespace Whilefun.FPEKit
 
         #region NOTE_ITEMS
 
-        private void saveSelectedNoteSlot()
-        {
+        // private void saveSelectedNoteSlot()
+        // {
+        //
+        //     if (currentMenuTab == eMenuTab.NOTES)
+        //     {
+        //
+        //         GameObject selection = myEventSystem.currentSelectedGameObject;
+        //
+        //         if (selection != null && selection.GetComponent<FPENoteEntrySlot>() && selection.GetComponent<FPENoteEntrySlot>().CurrentNoteIndex != -1)
+        //         {
+        //             previouslySelectedNoteSlotIndex = selection.GetComponent<FPENoteEntrySlot>().CurrentNoteIndex;
+        //         }
+        //         else
+        //         {
+        //             previouslySelectedNoteSlotIndex = -1;
+        //         }
+        //
+        //     }
+        //
+        // }
 
-            if (currentMenuTab == eMenuTab.NOTES)
-            {
+        // private void restoreSelectedNoteSlot()
+        // {
+        //
+        //     if (currentMenuTab == eMenuTab.NOTES)
+        //     {
+        //
+        //         bool matchedNote = false;
+        //
+        //         for (int i = 0; i < noteSlots.Length; i++)
+        //         {
+        //
+        //             if ((noteSlots[i].CurrentNoteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])) == previouslySelectedNoteSlotIndex && previouslySelectedNoteSlotIndex != -1)
+        //             {
+        //                 matchedNote = true;
+        //                 noteSlots[i].ForceActivateSlot();
+        //                 myEventSystem.SetSelectedGameObject(noteSlots[i].gameObject);
+        //             }
+        //             else
+        //             {
+        //                 noteSlots[i].ForceDeactivateSlot();
+        //             }
+        //
+        //         }
+        //
+        //         if (!matchedNote)
+        //         {
+        //             noteContentsPanel.clearNoteContents();
+        //             myEventSystem.SetSelectedGameObject(noteSlots[0].gameObject);
+        //             noteSlots[0].ForceHighlight();
+        //         }
+        //
+        //     }
+        //
+        // }
 
-                GameObject selection = myEventSystem.currentSelectedGameObject;
+        // private void refreshNoteSlotsView()
+        // {
+        //
+        //     noteData = FPEInventoryManagerScript.Instance.getNoteData();
+        //     selectNotePage(previouslySelectedPage[(int)eMenuTab.NOTES]);
+        //
+        // }
 
-                if (selection != null && selection.GetComponent<FPENoteEntrySlot>() && selection.GetComponent<FPENoteEntrySlot>().CurrentNoteIndex != -1)
-                {
-                    previouslySelectedNoteSlotIndex = selection.GetComponent<FPENoteEntrySlot>().CurrentNoteIndex;
-                }
-                else
-                {
-                    previouslySelectedNoteSlotIndex = -1;
-                }
-
-            }
-
-        }
-
-        private void restoreSelectedNoteSlot()
-        {
-
-            if (currentMenuTab == eMenuTab.NOTES)
-            {
-
-                bool matchedNote = false;
-
-                for (int i = 0; i < noteSlots.Length; i++)
-                {
-
-                    if ((noteSlots[i].CurrentNoteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])) == previouslySelectedNoteSlotIndex && previouslySelectedNoteSlotIndex != -1)
-                    {
-                        matchedNote = true;
-                        noteSlots[i].ForceActivateSlot();
-                        myEventSystem.SetSelectedGameObject(noteSlots[i].gameObject);
-                    }
-                    else
-                    {
-                        noteSlots[i].ForceDeactivateSlot();
-                    }
-
-                }
-
-                if (!matchedNote)
-                {
-                    noteContentsPanel.clearNoteContents();
-                    myEventSystem.SetSelectedGameObject(noteSlots[0].gameObject);
-                    noteSlots[0].ForceHighlight();
-                }
-
-            }
-
-        }
-
-        private void refreshNoteSlotsView()
-        {
-
-            noteData = FPEInventoryManagerScript.Instance.getNoteData();
-            selectNotePage(previouslySelectedPage[(int)eMenuTab.NOTES]);
-
-        }
-
-        private void selectNotePage(int pageNumber)
-        {
-
-            int maxPageNumber = getMaxPagesForTab();
-
-            if (pageNumber >= maxPageNumber)
-            {
-                previouslySelectedPage[(int)eMenuTab.NOTES] = maxPageNumber - 1;
-            }
-            else
-            {
-                previouslySelectedPage[(int)eMenuTab.NOTES] = pageNumber;
-            }
-
-            for (int i = 0; i < noteSlots.Length; i++)
-            {
-
-                if ((i + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])) < noteData.Length)
-                {
-                    noteSlots[i].setNoteData(i, noteData[i + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])].NoteTitle);
-                }
-                else
-                {
-                    noteSlots[i].clearNoteData();
-                }
-
-            }
-
-            restoreSelectedNoteSlot();
-            refreshPageHintsUI(previouslySelectedPage[(int)eMenuTab.NOTES]);
-
-        }
+        // private void selectNotePage(int pageNumber)
+        // {
+        //
+        //     int maxPageNumber = getMaxPagesForTab();
+        //
+        //     if (pageNumber >= maxPageNumber)
+        //     {
+        //         previouslySelectedPage[(int)eMenuTab.NOTES] = maxPageNumber - 1;
+        //     }
+        //     else
+        //     {
+        //         previouslySelectedPage[(int)eMenuTab.NOTES] = pageNumber;
+        //     }
+        //
+        //     for (int i = 0; i < noteSlots.Length; i++)
+        //     {
+        //
+        //         if ((i + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])) < noteData.Length)
+        //         {
+        //             noteSlots[i].setNoteData(i, noteData[i + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])].NoteTitle);
+        //         }
+        //         else
+        //         {
+        //             noteSlots[i].clearNoteData();
+        //         }
+        //
+        //     }
+        //
+        //     restoreSelectedNoteSlot();
+        //     refreshPageHintsUI(previouslySelectedPage[(int)eMenuTab.NOTES]);
+        //
+        // }
 
         public void displayNote(int noteIndex)
         {
-
-            previouslySelectedNoteSlotIndex = noteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES]);
-            noteContentsPanel.displayNoteContents(noteData[noteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])].NoteTitle, noteData[noteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])].NoteBody);
-
+        
+            //previouslySelectedNoteSlotIndex = noteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES]);
+            //noteContentsPanel.displayNoteContents(noteData[noteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])].NoteTitle, noteData[noteIndex + (previouslySelectedPage[(int)eMenuTab.NOTES] * itemsPerPage[(int)eMenuTab.NOTES])].NoteBody);
+        
         }
 
         #endregion
@@ -1237,9 +1237,9 @@ namespace Whilefun.FPEKit
                 case eMenuTab.AUDIO_DIARIES:
                     selectAudioDiaryPage(previouslySelectedPage[(int)eMenuTab.AUDIO_DIARIES]);
                     break;
-                case eMenuTab.NOTES:
-                    selectNotePage(previouslySelectedPage[(int)eMenuTab.NOTES]);
-                    break;
+                // case eMenuTab.NOTES:
+                //     selectNotePage(previouslySelectedPage[(int)eMenuTab.NOTES]);
+                //     break;
                 default:
                     Debug.LogError("FPEGameMenu.refreshPage() encountered bad currentMenuTab value of '" + currentMenuTab + "'. Defaulting to Items tab behaviour.");
                     break;
