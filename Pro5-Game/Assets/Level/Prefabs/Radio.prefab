@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480157756}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0668, y: 0.059738483, z: 0.026371827}
+  m_LocalPosition: {x: 0.06733, y: 0.059738483, z: 0.026371827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525013017}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0669, y: 0.059738483, z: 0.026371827}
+  m_LocalPosition: {x: -0.0655, y: 0.059738483, z: 0.026371827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -327,7 +327,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7427577704350436865, guid: 5facd01f779465d4fb3a3fca5d17781a, type: 3}
+  - {fileID: 2100000, guid: 02bf2a1cb9d6a804ea2f162ab59ff786, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -841,11 +841,13 @@ MonoBehaviour:
   clipFreq2: {fileID: 8300000, guid: 69214317b9d126949adc6289db0215a8, type: 3}
   clipFreq3: {fileID: 8300000, guid: 42969d6d1ba5c7949b03ca757bb5da01, type: 3}
   clipFreq4: {fileID: 8300000, guid: 5653d59d75d8880458cfe953181fa1b5, type: 3}
-  startFreq: 100
-  goalFreq1: 90
-  goalFreq2: 130
-  goalFreq3: 135
-  goalFreq4: 85
+  startFreq: 98
+  goalFreq1: 93
+  goalFreq2: 95.5
+  goalFreq3: 88
+  goalFreq4: 103
+  maxFreq: 108
+  minFreq: 88
 --- !u!82 &6218893924953550458
 AudioSource:
   m_ObjectHideFlags: 0
@@ -860,7 +862,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -14,20 +14,20 @@ public class Radio : MonoBehaviour
 
     private AudioSource audioSource;
 
-    [SerializeField] private int startFreq = 100;
-    [SerializeField] private int goalFreq1 = 100;
-    [SerializeField] private int goalFreq2;
-    [SerializeField] private int goalFreq3;
-    [SerializeField] private int goalFreq4;
+    [SerializeField] private float startFreq = 100;
+    [SerializeField] private float goalFreq1 = 100;
+    [SerializeField] private float goalFreq2;
+    [SerializeField] private float goalFreq3;
+    [SerializeField] private float goalFreq4;
 
     private GameObject pointer;
     private Transform pointerMinPos;
     private Transform pointerMaxPos;
     
-    private int maxFreq = 200;
-    private int minFreq = 0;
-    private int freqStep = 5;
-    private int currentFreq;
+    [SerializeField] float maxFreq = 200;
+    [SerializeField] float minFreq = 0;
+    private float freqStep = 2.5f;
+    private float currentFreq;
     
     
 
@@ -44,7 +44,7 @@ public class Radio : MonoBehaviour
 
     public void DecreaseFreq()
     {
-        if (currentFreq == minFreq) return;
+        if (currentFreq - minFreq <= 0.1f && currentFreq - minFreq >= -0.1f) return;
         currentFreq -= freqStep;
         print("Decr Freq: " + currentFreq);
         CheckFreq();
@@ -53,7 +53,7 @@ public class Radio : MonoBehaviour
     
     public void IncreaseFreq()
     {
-        if (currentFreq == maxFreq) return;
+        if (currentFreq - maxFreq <= 0.1f && currentFreq - maxFreq >= -0.1f) return;
         currentFreq += freqStep;
         print("Incr Freq" + currentFreq);
         CheckFreq();
@@ -62,26 +62,26 @@ public class Radio : MonoBehaviour
 
     public void ChangePointerPos()
     {
-        float pointerPos = (float)currentFreq / (float)maxFreq;
+        float pointerPos = (currentFreq - minFreq) / (maxFreq - minFreq) ;
         pointer.transform.position = Vector3.Lerp(pointerMinPos.position, pointerMaxPos.position, pointerPos);
     }
 
     private void CheckFreq()
     {
 
-        if (currentFreq == goalFreq1)
+        if (currentFreq - goalFreq1 <= 0.1f && currentFreq - goalFreq1 >= -0.1f)
         {
             audioSource.PlayOneShot(clipFreq1);
         } 
-        else if (currentFreq == goalFreq2)
+        else if (currentFreq - goalFreq2 <= 0.1f && currentFreq - goalFreq2 >= -0.1f)
         {
             audioSource.PlayOneShot(clipFreq2);
         } 
-        else if (currentFreq == goalFreq3)
+        else if (currentFreq - goalFreq3 <= 0.1f && currentFreq - goalFreq3 >= -0.1f)
         {
             audioSource.PlayOneShot(clipFreq3);
         } 
-        else if (currentFreq == goalFreq4)
+        else if (currentFreq - goalFreq4 <= 0.1f && currentFreq - goalFreq4 >= -0.1f)
         {
             audioSource.PlayOneShot(clipFreq4);
         }
