@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 6242583703088045012}
   - component: {fileID: 5359423381739395970}
   - component: {fileID: 7596789697702236630}
+  - component: {fileID: 2698263193571523269}
   m_Layer: 0
   m_Name: pCylinder3
   m_TagString: Untagged
@@ -146,6 +147,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2698263193571523269
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419444820939626499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8321685774571456786, guid: a0710182d2bf4614d9ca475725ec6c2d, type: 3}
 --- !u!1 &1895415312848228047
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7037737375146009691}
+  - component: {fileID: 5451844024512130356}
   m_Layer: 0
   m_Name: pCylinder6
   m_TagString: Untagged
@@ -210,6 +226,20 @@ Transform:
   m_Father: {fileID: 5549269419768866016}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &5451844024512130356
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016392653221084907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5064622748051095130
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +323,7 @@ GameObject:
   - component: {fileID: 6569752841181878199}
   - component: {fileID: 53039625945042529}
   - component: {fileID: 3400768256321803948}
+  - component: {fileID: 5359853610356150277}
   m_Layer: 0
   m_Name: pCylinder10
   m_TagString: Untagged
@@ -365,6 +396,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5359853610356150277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001436093913362379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2721331549007201028, guid: a0710182d2bf4614d9ca475725ec6c2d, type: 3}
 --- !u!1 &6014632363278582569
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +453,7 @@ GameObject:
   - component: {fileID: 8484752059675574401}
   - component: {fileID: 4564286767281759357}
   - component: {fileID: 3363898995254930105}
+  - component: {fileID: 3262448387943255481}
   m_Layer: 0
   m_Name: pCylinder5
   m_TagString: Untagged
@@ -480,6 +526,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3262448387943255481
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6388477803845649037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1226817584057097758, guid: a0710182d2bf4614d9ca475725ec6c2d, type: 3}
 --- !u!1 &6801812822112180619
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +551,7 @@ GameObject:
   - component: {fileID: 214596212641397425}
   - component: {fileID: 2026624008818204148}
   - component: {fileID: 3499393735271050999}
+  - component: {fileID: 4204044259884504649}
   m_Layer: 0
   m_Name: pCylinder2
   m_TagString: Untagged
@@ -563,6 +624,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4204044259884504649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801812822112180619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6099800089077584851, guid: a0710182d2bf4614d9ca475725ec6c2d, type: 3}
 --- !u!1 &7331066976189141350
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +711,7 @@ GameObject:
   - component: {fileID: 7187822770366196749}
   - component: {fileID: 2291319413509617751}
   - component: {fileID: 1028570343453187056}
+  - component: {fileID: 2277451721040998946}
   m_Layer: 0
   m_Name: pCylinder4
   m_TagString: Untagged
@@ -708,6 +784,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2277451721040998946
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862762091494865513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8211372540250625004, guid: a0710182d2bf4614d9ca475725ec6c2d, type: 3}
 --- !u!1 &9150211413924310888
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +809,7 @@ GameObject:
   - component: {fileID: 4805866957145366882}
   - component: {fileID: 5782700318602485554}
   - component: {fileID: 8932347290706537486}
+  - component: {fileID: 1160234853198912818}
   m_Layer: 0
   m_Name: pCylinder1
   m_TagString: Untagged
@@ -791,3 +882,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1160234853198912818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150211413924310888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5076798556035486163, guid: a0710182d2bf4614d9ca475725ec6c2d, type: 3}
