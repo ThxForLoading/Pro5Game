@@ -23,6 +23,7 @@ public class RoomChecker : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         clockChecker = GameObject.FindGameObjectWithTag("ClockCheck");
+        print(clockChecker);
         volume = FindObjectOfType<PostProcessVolume>();
     }
 
@@ -89,10 +90,8 @@ public class RoomChecker : MonoBehaviour
                 break;
         }
         
-         // Enable before build!
-        // && clockChecker.GetComponent<ClockEnabler>().clock
 
-        if (Input.GetKeyDown(KeyCode.Q) )
+        if (Input.GetKeyDown(KeyCode.Q) && clockChecker.GetComponent<ClockEnabler>().clock)
         {
             Debug.Log("Changing Times");
             

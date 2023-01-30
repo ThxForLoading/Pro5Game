@@ -387,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
   highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
-  interactionDistance: 2
+  interactionDistance: 2.5
   playSecondarySoundOnInteract: 0
   showWithText: 0
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
@@ -413,7 +413,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1484389699210466711}
         m_TargetAssemblyTypeName: WatchScript, Assembly-CSharp
-        m_MethodName: gainTimePower
+        m_MethodName: GainTimePower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -451,8 +451,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0012821069, y: 0.0018432639, z: 0.00047026662}
-  m_Center: {x: 2.910383e-11, y: 0.0002805786, z: -0.000012892466}
+  m_Size: {x: 0.0012821067, y: 0.0018432637, z: 0.0011287577}
+  m_Center: {x: 0, y: 0.00028057897, z: 0.00031635378}
 --- !u!1 &3224490119512934531
 GameObject:
   m_ObjectHideFlags: 0
