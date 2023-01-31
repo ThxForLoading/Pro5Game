@@ -20,7 +20,7 @@ public class Radio : MonoBehaviour
     [SerializeField] private float goalFreq3;
     [SerializeField] private float goalFreq4;
 
-    private GameObject pointer;
+    [SerializeField] GameObject pointer;
     private Transform pointerMinPos;
     private Transform pointerMaxPos;
     
@@ -35,7 +35,6 @@ public class Radio : MonoBehaviour
     {
         currentFreq = startFreq;
         audioSource = GetComponent<AudioSource>();
-        pointer = GameObject.Find("RadioPointer");
         pointerMinPos = GameObject.Find("PointerMinPos").transform;
         pointerMaxPos = GameObject.Find("PointerMaxPos").transform;
         ChangePointerPos();
@@ -71,19 +70,28 @@ public class Radio : MonoBehaviour
 
         if (currentFreq - goalFreq1 <= 0.1f && currentFreq - goalFreq1 >= -0.1f)
         {
-            audioSource.PlayOneShot(clipFreq1);
+            audioSource.clip = clipFreq1;
+            audioSource.Play();
+            //audioSource.PlayOneShot(clipFreq1);
         } 
         else if (currentFreq - goalFreq2 <= 0.1f && currentFreq - goalFreq2 >= -0.1f)
         {
-            audioSource.PlayOneShot(clipFreq2);
+            audioSource.clip = clipFreq2;
+            audioSource.Play();
         } 
         else if (currentFreq - goalFreq3 <= 0.1f && currentFreq - goalFreq3 >= -0.1f)
         {
-            audioSource.PlayOneShot(clipFreq3);
+            audioSource.clip = clipFreq3;
+            audioSource.Play();
         } 
         else if (currentFreq - goalFreq4 <= 0.1f && currentFreq - goalFreq4 >= -0.1f)
         {
-            audioSource.PlayOneShot(clipFreq4);
+            audioSource.clip = clipFreq4;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.clip = null;
         }
     }
 }
