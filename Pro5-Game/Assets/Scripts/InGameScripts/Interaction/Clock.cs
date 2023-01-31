@@ -8,7 +8,7 @@ public class Clock : MonoBehaviour
 
     [SerializeField] private FPEDrawer drawer;
     [SerializeField] AudioClip drawerOpen;
-    private float rotationGoal = -120.0f;    
+    private float rotationGoal = -240.0f;    
     [SerializeField] GameObject pointerBase;
     [SerializeField] GameObject hourPointerBase;
     private float rotationPerAction = 30.0f;

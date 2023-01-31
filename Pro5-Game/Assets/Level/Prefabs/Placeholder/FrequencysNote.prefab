@@ -307,6 +307,7 @@ MonoBehaviour:
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
   interactionString: Pick up note
+  interactionFailedString: Interaction Failed
   putBackString: Put back note
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
@@ -454,7 +455,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2460919369593745081}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0003}
+  m_LocalPosition: {x: 0, y: 0, z: -0.075}
   m_LocalScale: {x: 0.22218, y: 0.22218, z: 0.22218}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -486,7 +487,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9047738469312642466, guid: 0f5ce3837f6135d4db53385630c1d85a, type: 2}
+  - {fileID: -2728913555159823631, guid: d8b8316e7d8275f4c8abe0db442006f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -528,17 +529,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Frequencys:
+  m_text: 'Frequencys
 
 
-    50 mhz
+    93 mhz
 
-    125 mhz
+    95,5 mhz
 
-    160 mhz'
+    88 mhz
+
+    103 mhz'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0f5ce3837f6135d4db53385630c1d85a, type: 2}
-  m_sharedMaterial: {fileID: 9047738469312642466, guid: 0f5ce3837f6135d4db53385630c1d85a,
+  m_fontAsset: {fileID: 11400000, guid: d8b8316e7d8275f4c8abe0db442006f7, type: 2}
+  m_sharedMaterial: {fileID: -2728913555159823631, guid: d8b8316e7d8275f4c8abe0db442006f7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -563,13 +566,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
