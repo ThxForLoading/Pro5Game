@@ -9,30 +9,32 @@ public class Clock : MonoBehaviour
     [SerializeField] private FPEDrawer drawer;
     [SerializeField] AudioClip drawerOpen;
     private float rotationGoal = -120.0f;    
-    private GameObject pointerBase;
-    private GameObject hourPointerBase;
-    private float rotationPerAction = -30.0f;
+    [SerializeField] GameObject pointerBase;
+    [SerializeField] GameObject hourPointerBase;
+    private float rotationPerAction = 30.0f;
     private float currentRotation = 0.0f;
     
     
-    public void Awake()
-    {
-        pointerBase = GameObject.Find("PointerBase");
-        hourPointerBase = GameObject.Find("HourPointerBase");
-    }
+    // public void Awake()
+    // {
+    //     pointerBase = GameObject.Find("PointerBase");
+    //     hourPointerBase = GameObject.Find("HourPointerBase");
+    // }
 
     public void TurnClock(bool turnForward)
     {
         if (turnForward)
         {
-            pointerBase.transform.Rotate(0, rotationPerAction, 0);
-            hourPointerBase.transform.Rotate(0, rotationPerAction / 12f, 0);
+            print("Turn forward");
+            pointerBase.transform.Rotate(0, 0,rotationPerAction);
+            hourPointerBase.transform.Rotate(0, 0,rotationPerAction / 12f);
             currentRotation += rotationPerAction;
         }
         else
         {
-            pointerBase.transform.Rotate(0, -rotationPerAction, 0);
-            hourPointerBase.transform.Rotate(0, -rotationPerAction / 12f, 0);
+            print("Turn backward");
+            pointerBase.transform.Rotate(0, 0,-rotationPerAction);
+            hourPointerBase.transform.Rotate(0, 0,-rotationPerAction / 12f);
             currentRotation -= rotationPerAction;
         }
         

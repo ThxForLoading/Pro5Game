@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 namespace Whilefun.FPEKit
 {
@@ -92,9 +94,13 @@ namespace Whilefun.FPEKit
         public bool IsToggledOn { get { return toggleOn; } }
 
         private bool eventHasFiredOnce = false;
+
+        private String originalInteractionString;
         
         public override void Awake()
         {
+
+            originalInteractionString = interactionString;
 
             base.Awake();
             interactionType = eInteractionType.ACTIVATE;
@@ -252,6 +258,10 @@ namespace Whilefun.FPEKit
             {
                 ActivationFailureEvent.Invoke();
             }
+            
+            // set interaction string failed
+
+            StartCoroutine(setInterActionFailedString());
 
 #if UNITY_EDITOR
             if (ActivationFailureEvent.GetPersistentEventCount() == 0)
@@ -260,6 +270,14 @@ namespace Whilefun.FPEKit
             }
 #endif
 
+        }
+
+        IEnumerator setInterActionFailedString()
+        {
+            setInteractionString(interactionFailedString);
+            yield return new WaitForSeconds(0.5f);
+            print(interactionString);
+            setInteractionString(originalInteractionString);
         }
 
         private void doToggleOn()

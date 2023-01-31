@@ -63,9 +63,11 @@ namespace Whilefun.FPEKit
         [Tooltip("The AudioClip for the secondary sound. If this is not specified, no sound will be played, regardless of other values set in this section.")]
         public AudioClip soundToPlayOnInteract = null;
 
-        [Header("Interaction Stings")]
+        [Header("Interaction Strings")]
         [Tooltip("The string that appears below the reticle when the object is highlighted")]
         public string interactionString = "<DEFAULT INTERACTION STRING>";
+
+        public string interactionFailedString = "Interaction Failed";
 
         // Highlight update
         Material[] baseMaterials;
