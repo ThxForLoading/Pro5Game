@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/FirstPersonExplorationKit/Scenes/DemoScenes_2.2/demoMainMenu_0.unity
     guid: 6a819d87835309642b03dd8b59dbc760
+  - enabled: 1
+    path: Assets/Level/Scenes/MainMenu.unity
+    guid: 2862226d89e471b4aa2db11b030b9d08
   - enabled: 1
     path: Assets/Level/Scenes/TimeChangeTest.unity
     guid: cf84c92e90757014f9225c868c0b593b

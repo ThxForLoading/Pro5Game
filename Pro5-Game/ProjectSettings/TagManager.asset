@@ -8,6 +8,7 @@ TagManager:
   - MonkeyStatue
   - PostPro
   - IceWithKey
+  - Schatulle
   layers:
   - Default
   - TransparentFX

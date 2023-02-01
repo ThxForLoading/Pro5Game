@@ -105,6 +105,7 @@ namespace Whilefun.FPEKit
 
             GameObject player = Instantiate(playerPrefab, null);
             FPEPlayerStartLocation startLocation = GameObject.FindObjectOfType<FPEPlayerStartLocation>();
+            print(startLocation);
 
             if (startLocation != null)
             {
