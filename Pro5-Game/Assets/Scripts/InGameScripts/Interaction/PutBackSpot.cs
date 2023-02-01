@@ -7,10 +7,10 @@ public class PutBackSpot : FPEPutBackScript
 {
 
     [SerializeField] private String tagName;
-    [SerializeField] private int placementID;
-    private  PutBackBehaviour putBackBehaviour;
+    [SerializeField] protected int placementID;
+    protected  PutBackBehaviour putBackBehaviour;
 
-    private bool correctPlacement = false;
+    protected bool correctPlacement = false;
     
     private void Start()
     {
@@ -38,7 +38,7 @@ public class PutBackSpot : FPEPutBackScript
     }
     
     // setter and getter for correctPacement
-    public void PlaceObject(int objID)
+    public virtual void PlaceObject(int objID)
     {
         if (objID == placementID)
         {

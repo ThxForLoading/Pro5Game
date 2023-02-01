@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2511889357547655843}
   - component: {fileID: 6784206769057293104}
-  - component: {fileID: 8971494548621951695}
   - component: {fileID: 2400810435390949838}
+  - component: {fileID: 2509067485404878271}
   m_Layer: 0
   m_Name: CookingPot
   m_TagString: IceWithKey
@@ -48,22 +48,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.23681529
   m_Center: {x: 0.000000022351742, y: -0.00034238407, z: 0.09377473}
---- !u!114 &8971494548621951695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997100074703915033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817acc782ce945178e4f3c49fe35b816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPickupObject: {fileID: 0}
-  interactionDistance: 2
-  tagName: IceWithKey
-  placementID: 0
 --- !u!65 &2400810435390949838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77,6 +61,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4055786, y: 0.41227537, z: 0.036869094}
   m_Center: {x: 0, y: -0.0015385448, z: -0.10000535}
+--- !u!114 &2509067485404878271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997100074703915033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8510dcccb019d4c98a341b342f523c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPickupObject: {fileID: 0}
+  interactionDistance: 2
+  tagName: IceWithKey
+  placementID: 0
 --- !u!1 &5769317920996858209
 GameObject:
   m_ObjectHideFlags: 0
