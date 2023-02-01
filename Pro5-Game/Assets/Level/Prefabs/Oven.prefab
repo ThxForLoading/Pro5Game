@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2003069930179607345}
   - component: {fileID: 3198557289167467668}
   - component: {fileID: 830766391027089502}
+  - component: {fileID: 5376869134939006987}
   m_Layer: 0
   m_Name: Oven
-  m_TagString: Untagged
+  m_TagString: IceWithKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,16 +26,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191067762281111947}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -61.114246, y: -2.485983, z: 58.57189}
   m_LocalScale: {x: 404.16507, y: 404.16507, z: 404.16507}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5256345377216619182}
-  - {fileID: 5558421839016477614}
+  - {fileID: 2917078105019117414}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &3198557289167467668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89,6 +90,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5376869134939006987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191067762281111947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2480c92ae0664bf2aab677e0c55c17f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: IceWithKey
+  behaviour:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: IceWithKey, Assembly-CSharp
+        m_MethodName: removeIce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2165073922180952945
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +184,7 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: <DEFAULT INTERACTION STRING>
+  interactionString: Turn on stove
   interactionFailedString: Interaction Failed
   canInteractWithWhileHoldingObject: 1
   requireInventoryItem: 0
@@ -167,7 +196,31 @@ MonoBehaviour:
   eventRepeatDelay: 0
   ActivationEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5376869134939006987}
+        m_TargetAssemblyTypeName: Oven, Assembly-CSharp
+        m_MethodName: turnOnOven
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5376869134939006987}
+        m_TargetAssemblyTypeName: Oven, Assembly-CSharp
+        m_MethodName: CheckConditions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ActivationFailureEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -180,93 +233,93 @@ MonoBehaviour:
   toggleOnAtStart: 0
   toggleOffAtStart: 0
   fireToggleEventsOnLoadGame: 1
---- !u!1001 &1361677074866503611
+--- !u!1001 &767737409131363781
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 2003069930179607345}
     m_Modifications:
-    - target: {fileID: 6431247044225402170, guid: 87b32a07b6fb70a4e85c95d8774c146d,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingPotPH
-      objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0030530747
+      value: 0.010091787
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.00084463326
+      value: 0.010091789
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0030530752
+      value: 0.010091789
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00279
+      value: -0.00277
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00226
+      value: -0.00209
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01684
+      value: 0.0171
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.9038426
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.000000089406974
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.00000005960465
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.42786518
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+    - target: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -50.664
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997100074703915033, guid: a71c2359decad0248896edafe49dc37d,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingPot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 87b32a07b6fb70a4e85c95d8774c146d, type: 3}
---- !u!4 &5558421839016477614 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: a71c2359decad0248896edafe49dc37d, type: 3}
+--- !u!4 &2917078105019117414 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6901446624345340949, guid: 87b32a07b6fb70a4e85c95d8774c146d,
+  m_CorrespondingSourceObject: {fileID: 2511889357547655843, guid: a71c2359decad0248896edafe49dc37d,
     type: 3}
-  m_PrefabInstance: {fileID: 1361677074866503611}
+  m_PrefabInstance: {fileID: 767737409131363781}
   m_PrefabAsset: {fileID: 0}

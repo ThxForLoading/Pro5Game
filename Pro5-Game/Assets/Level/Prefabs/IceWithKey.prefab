@@ -107,15 +107,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798881891354390743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.11100006, z: 0}
+  m_LocalPosition: {x: 0, y: -0.11099981, z: 0}
   m_LocalScale: {x: 20.69536, y: 20.69536, z: 20.69536}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6518030140398600298}
   - {fileID: 5133936130312428207}
   - {fileID: 1216617029847763761}
-  m_Father: {fileID: 6049035350479740782}
-  m_RootOrder: 1
+  m_Father: {fileID: 7459046236014576651}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7079908425988408209
 GameObject:
@@ -229,9 +229,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 61104769958593207}
-  - {fileID: 1422355867017144941}
+  m_Children: []
   m_Father: {fileID: 7459046236014576651}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,7 +295,7 @@ GameObject:
   - component: {fileID: 1670636234212043149}
   - component: {fileID: 5917445947041818979}
   - component: {fileID: 6174354902320051577}
-  - component: {fileID: 2930887224922830240}
+  - component: {fileID: 1360108746768482513}
   m_Layer: 0
   m_Name: IceWithKey
   m_TagString: IceWithKey
@@ -318,6 +316,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6049035350479740782}
+  - {fileID: 61104769958593207}
+  - {fileID: 1422355867017144941}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,7 +446,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2930887224922830240
+--- !u!114 &1360108746768482513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7838527953501511345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1136a36d29c478e4e8405af3fd1326b8, type: 3}
+  m_Script: {fileID: 11500000, guid: faf1f7fe5b1b45f787384cd45c19c438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
@@ -466,9 +466,9 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: <DEFAULT INTERACTION STRING>
+  interactionString: Pickup Iceblock
   interactionFailedString: Interaction Failed
-  putBackString: <DEFAULT PUT BACK STRING>
+  putBackString: Place inside Pot
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
   examinationOffsetUp: 0
@@ -488,9 +488,24 @@ MonoBehaviour:
   pickupRepeatMode: 0
   OnPutBackEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1360108746768482513}
+        m_TargetAssemblyTypeName: IceWithKey, Assembly-CSharp
+        m_MethodName: disablePhysics
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   putbackRepeatMode: 0
   placementID: 0
+  key: {fileID: 833947522530973709}
+  keyView: {fileID: 1798881891354390743}
+  ice: {fileID: 7747600904393740676}
 --- !u!1 &9203512004274494386
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,12 +594,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 6049035350479740782}
+    m_TransformParent: {fileID: 7459046236014576651}
     m_Modifications:
     - target: {fileID: 7369900069660452097, guid: a4d154499c439374294d3ea1c552ef4a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7369900069660452097, guid: a4d154499c439374294d3ea1c552ef4a,
         type: 3}
@@ -609,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 7369900069660452097, guid: a4d154499c439374294d3ea1c552ef4a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.11100006
+      value: -0.11099981
       objectReference: {fileID: 0}
     - target: {fileID: 7369900069660452097, guid: a4d154499c439374294d3ea1c552ef4a,
         type: 3}
@@ -656,11 +671,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MarkedKey
       objectReference: {fileID: 0}
+    - target: {fileID: 7857925639679819707, guid: a4d154499c439374294d3ea1c552ef4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4d154499c439374294d3ea1c552ef4a, type: 3}
 --- !u!4 &61104769958593207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7369900069660452097, guid: a4d154499c439374294d3ea1c552ef4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7394404151524468662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &833947522530973709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7857925639679819707, guid: a4d154499c439374294d3ea1c552ef4a,
     type: 3}
   m_PrefabInstance: {fileID: 7394404151524468662}
   m_PrefabAsset: {fileID: 0}

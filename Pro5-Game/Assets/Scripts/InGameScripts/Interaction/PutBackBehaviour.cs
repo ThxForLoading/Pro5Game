@@ -8,7 +8,7 @@ using Whilefun.FPEKit;
 
 public class PutBackBehaviour : MonoBehaviour
 {
-    private List<PutBackSpot> putBackSpots = new List<PutBackSpot>();
+    protected List<PutBackSpot> putBackSpots = new List<PutBackSpot>();
     [SerializeField] private String tagName;
     [SerializeField] private FPEGenericEvent behaviour;
 
@@ -29,8 +29,8 @@ public class PutBackBehaviour : MonoBehaviour
     }
 
 
-    public void CheckConditions()
-    {
+    public virtual void CheckConditions()
+    { 
         // if all putBackspots getCorrectPlacement is true 
         foreach (PutBackSpot spot in putBackSpots)
         {
@@ -42,7 +42,7 @@ public class PutBackBehaviour : MonoBehaviour
         ExecuteBehaviour();
     }
     
-    private void ExecuteBehaviour()
+    protected void ExecuteBehaviour()
     {
         print("execute behaviour");
         behaviour.Invoke();
