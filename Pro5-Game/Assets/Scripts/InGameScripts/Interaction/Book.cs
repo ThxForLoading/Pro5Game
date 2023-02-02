@@ -6,9 +6,12 @@ using Whilefun.FPEKit;
 public class Book : FPEInteractableActivateScript
 {
     [SerializeField] private int bookID = 0;
-    private float indentDistance = 0.05f;
+    private float indentDistance = 0.085f;
     private BookShelf bookShelf;
     private bool isIndented = false;
+    
+    
+    
     void Start()
     {
         bookShelf = GetComponentInParent<BookShelf>();
@@ -28,14 +31,14 @@ public class Book : FPEInteractableActivateScript
         bookShelf.CheckOpenCondition(bookID, this);
     }
 
-    public void IndentBook()
+    private void IndentBook()
     {
-        transform.Translate(Vector3.right * indentDistance);
+        transform.Translate(Vector3.back * indentDistance);
     }
 
     public void RestoreBookPos()
     {
-        transform.Translate(Vector3.right * -indentDistance);
+        transform.Translate(Vector3.back * -indentDistance);
         isIndented = false;
     }
 }

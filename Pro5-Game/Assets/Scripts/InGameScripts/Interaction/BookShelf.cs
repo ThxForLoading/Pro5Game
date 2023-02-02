@@ -4,12 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using Whilefun.FPEKit;
 
 public class BookShelf : MonoBehaviour
 {
     public static bool isActive = true;
     
     [SerializeField] private int numberBooks = 4;
+    [SerializeField] private FPESlidingDoor door;
+    [SerializeField] private AudioClip wrongCombinationClip;
+
+    private AudioSource audioSource;
     private  int[] bookIds = new int[4];
 
     private  bool sequenceCorrect = true;
@@ -19,7 +24,8 @@ public class BookShelf : MonoBehaviour
 
     private void Start()
     {
-        books = new Book[numberBooks]; 
+        books = new Book[numberBooks];
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -45,13 +51,15 @@ public class BookShelf : MonoBehaviour
         // loose condition
         if (checkID == numberBooks && !sequenceCorrect)
         {
-            ExecuteLoose();
+            audioSource.PlayOneShot(wrongCombinationClip);
+            Invoke("ExecuteLoose", 0.5f);
+
         }
     }
 
     private void ExecuteLoose()
     {
-        print("Loose");
+        
         foreach (Book book in books)
         {
             book.RestoreBookPos();
@@ -64,7 +72,7 @@ public class BookShelf : MonoBehaviour
 
     private void OpenDoor()
     {
-        transform.Rotate(0f,90f,0f);
+        door.activateDoor();
         isActive = false;
     }
 }
