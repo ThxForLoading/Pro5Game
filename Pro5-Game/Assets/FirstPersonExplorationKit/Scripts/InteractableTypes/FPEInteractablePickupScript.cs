@@ -306,6 +306,8 @@ namespace Whilefun.FPEKit
             putBackPlace.transform.rotation = gameObject.transform.rotation;
             putBackPlace.transform.localScale = gameObject.transform.localScale;
 
+
+
             // Try to make the best collider based on what the game object already has
             if (gameObject.GetComponent<MeshCollider>())
             {

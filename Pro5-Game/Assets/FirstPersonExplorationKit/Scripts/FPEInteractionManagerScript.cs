@@ -386,6 +386,13 @@ namespace Whilefun.FPEKit
                             currentHeldObject.transform.position = currentPutbackObject.transform.position;
                             currentHeldObject.transform.rotation = currentPutbackObject.transform.rotation;
                             currentHeldObject.transform.parent = null;
+                            
+                            // if is Schatulle piece set parent
+                            if (currentHeldObject.CompareTag("Schatulle"))
+                            {
+                                currentHeldObject.transform.parent = currentPutbackObject.transform;
+                            }
+                            
                             currentHeldObject.GetComponent<Collider>().isTrigger = false;
                             currentHeldObject.GetComponent<Rigidbody>().isKinematic = false;
                             currentHeldObject.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;

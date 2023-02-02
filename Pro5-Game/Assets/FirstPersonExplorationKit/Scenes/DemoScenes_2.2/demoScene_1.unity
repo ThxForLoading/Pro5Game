@@ -8856,6 +8856,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1910378624}
     m_Modifications:
+    - target: {fileID: 1343054319395966, guid: 96ba616abfe664544a28f8c0692504d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4337388385409614, guid: 96ba616abfe664544a28f8c0692504d7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10979,6 +10983,7 @@ MonoBehaviour:
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
   interactionString: 
+  interactionFailedString: Interaction Failed
   canInteractWithWhileHoldingObject: 1
 --- !u!65 &812107680
 BoxCollider:
