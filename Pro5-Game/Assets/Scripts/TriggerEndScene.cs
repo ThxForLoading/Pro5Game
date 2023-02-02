@@ -53,31 +53,37 @@ public class TriggerEndScene : MonoBehaviour
     private IEnumerator PlayEnding()
     {
         AudioManager.instance.PlayEndingIntro();
-        if (AudioManager.instance.isPlayingTrack01)
-        {
-            yield return new WaitWhile(() => AudioManager.instance.track01.isPlaying);
-        }
-        else
-        {
-            yield return new WaitWhile(() => AudioManager.instance.track02.isPlaying);
-        }
-
-        yield return new WaitForSeconds(3.5f);
+        Slide.sprite = Intro[0];
+        yield return new WaitForSeconds(4f);
+        Slide.sprite = Intro[1];
+        yield return new WaitForSeconds(16f);
+        Slide.sprite = Intro[2];
+        yield return new WaitForSeconds(10f);
 
         AudioManager.instance.PlayEndingFight();
-        if (AudioManager.instance.isPlayingTrack01)
-        {
-            yield return new WaitWhile(() => AudioManager.instance.track01.isPlaying);
-        }
-        else
-        {
-            yield return new WaitWhile(() => AudioManager.instance.track02.isPlaying);
-        }
 
+        Slide.sprite = Fight[0];
+        yield return new WaitForSeconds(3f);
+        Slide.sprite = Fight[1];
+        yield return new WaitForSeconds(4f);
+        Slide.sprite = Fight[2];
+        yield return new WaitForSeconds(6f);
+        Slide.sprite = Fight[3];
+        yield return new WaitForSeconds(10f);
+        Slide.sprite = Fight[4];
+        yield return new WaitForSeconds(3f);
+        Slide.sprite = Fight[5];
+        yield return new WaitForSeconds(3f);
+        Slide.sprite = Fight[6];
+        yield return new WaitForSeconds(2f);
+        Slide.sprite = Fight[7];
+        yield return new WaitForSeconds(3f);
 
         ChoiceUI.SetActive(true);
+        Slide.sprite = Decision;
+
         yield return waitForKeyPress();
-        if (Input.mousePosition.x > Screen.width/2)
+        if (Input.mousePosition.x < Screen.width/2)
         {
             choice = false;
         }
@@ -90,26 +96,22 @@ public class TriggerEndScene : MonoBehaviour
         if (choice)
         {
             AudioManager.instance.PlayEndingChoiceA();
-            if (AudioManager.instance.isPlayingTrack01)
-            {
-                yield return new WaitWhile(() => AudioManager.instance.track01.isPlaying);
-            }
-            else
-            {
-                yield return new WaitWhile(() => AudioManager.instance.track02.isPlaying);
-            }
+            Slide.sprite = ChoiceA[0];
+            yield return new WaitForSeconds(4f);
+            Slide.sprite = ChoiceA[1];
+            yield return new WaitForSeconds(28f);
+            Slide.sprite = ChoiceA[2];
+            yield return new WaitForSeconds(6f);
+            Slide.sprite = ChoiceA[3];
+            yield return new WaitForSeconds(6f);
         }
         else
         {
             AudioManager.instance.PlayEndingChoiceB();
-            if (AudioManager.instance.isPlayingTrack01)
-            {
-                yield return new WaitWhile(() => AudioManager.instance.track01.isPlaying);
-            }
-            else
-            {
-                yield return new WaitWhile(() => AudioManager.instance.track02.isPlaying);
-            }
+            Slide.sprite = ChoiceB[0];
+            yield return new WaitForSeconds(4f);
+            Slide.sprite = ChoiceA[1];
+            yield return new WaitForSeconds(8f);
         }
     }
 
@@ -124,26 +126,6 @@ public class TriggerEndScene : MonoBehaviour
             }
             yield return null; // wait until next frame, then continue execution from here (loop continues)
         }
-    }
-
-    private IEnumerator showIntro()
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
-    private IEnumerator showFight()
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
-    private IEnumerator showChoiceA()
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
-    private IEnumerator showChoiceB()
-    {
-        yield return new WaitForSeconds(0.5f);
     }
 
 }

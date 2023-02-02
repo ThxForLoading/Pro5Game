@@ -57,6 +57,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayEndingFight()
     {
+        Debug.Log("Fight Audio");
         StartCoroutine(FadeTrack(EndingFight));
     }
 
