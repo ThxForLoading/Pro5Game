@@ -965,6 +965,7 @@ MonoBehaviour:
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
   interactionString: <DEFAULT INTERACTION STRING>
+  interactionFailedString: Interaction Failed
   putBackString: <DEFAULT PUT BACK STRING>
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
@@ -995,7 +996,7 @@ MonoBehaviour:
   canBeDropped: 0
   canBeConsumed: 0
   itemName: Clock Key
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 732a18829c5fa9e43823a8938553841f, type: 3}
   itemDescription: It seems like a key for turning a clock...
   stackable: 0
 --- !u!1 &3908409124977967205

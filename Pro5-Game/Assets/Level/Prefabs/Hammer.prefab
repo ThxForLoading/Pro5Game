@@ -58,6 +58,7 @@ MonoBehaviour:
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
   interactionString: <DEFAULT INTERACTION STRING>
+  interactionFailedString: Interaction Failed
   putBackString: <DEFAULT PUT BACK STRING>
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
@@ -88,7 +89,7 @@ MonoBehaviour:
   canBeDropped: 0
   canBeConsumed: 0
   itemName: New Inventory Item
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: c46d8925c9dd6bb4cb11637519da4751, type: 3}
   itemDescription: A Hammer... you can smash stuff with it
   stackable: 0
 --- !u!65 &1783242904135440799

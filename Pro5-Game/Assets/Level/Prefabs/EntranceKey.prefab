@@ -265,6 +265,7 @@ MonoBehaviour:
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
   interactionString: Door unlocked
+  interactionFailedString: Interaction Failed
   putBackString: <DEFAULT PUT BACK STRING>
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
@@ -296,6 +297,6 @@ MonoBehaviour:
   canBeDropped: 0
   canBeConsumed: 0
   itemName: Entrance Key
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 7289f89c9d91e8241864817e43587b4c, type: 3}
   itemDescription: The key for the front door.
   stackable: 0

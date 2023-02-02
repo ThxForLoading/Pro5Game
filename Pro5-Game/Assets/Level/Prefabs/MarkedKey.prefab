@@ -382,7 +382,7 @@ MonoBehaviour:
   canBeDropped: 0
   canBeConsumed: 0
   itemName: Key Utility Room
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 89f742e74d1e1e24c871186006bd7628, type: 3}
   itemDescription: This is the Key for the Utility Room upstairs.
   stackable: 0
 --- !u!1 &9051367625262816150
