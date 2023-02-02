@@ -94,9 +94,9 @@ public class RoomChecker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && clockChecker.GetComponent<ClockEnabler>().clock)
         {
             Debug.Log("Changing Times");
-            
             Fader.fader.CrossFade(changeTime);
-            
+            AudioManager.instance.SwapTrack();
+
         }
 
         if (!InTheNow)
