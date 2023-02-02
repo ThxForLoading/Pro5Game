@@ -6,10 +6,14 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip oldHouseAudio;
     public AudioClip newHouseAudio;
+    public AudioClip EndingIntro;
+    public AudioClip EndingFight;
+    public AudioClip EndingChoiceA;
+    public AudioClip EndingChoiceB;
     public float maxVolume = 0.5f;
 
-    private AudioSource track01, track02;
-    private bool isPlayingTrack01;
+    public AudioSource track01, track02;
+    public bool isPlayingTrack01;
 
     public static AudioManager instance;
 
@@ -38,6 +42,37 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    public void StopSound()
+    {
+        track01.Stop();
+        track02.Stop();
+    }
+
+    public void PlayEndingIntro()
+    {
+        track01.loop = false;
+        track02.loop = false;
+        StartCoroutine(FadeTrack(EndingIntro));
+    }
+
+    public void PlayEndingFight()
+    {
+        StartCoroutine(FadeTrack(EndingFight));
+    }
+
+    public void PlayEndingChoiceA()
+    {
+        StartCoroutine(FadeTrack(EndingChoiceA));
+    }
+
+    public void PlayEndingChoiceB()
+    {
+        StartCoroutine(FadeTrack(EndingChoiceB));
+    }
+
+
+
+
     public void SwapTrack()
     {
         AudioClip newClip;
@@ -61,14 +96,6 @@ public class AudioManager : MonoBehaviour
     {
         float timeFade = 2.25f;
         float timeElapsed = 0;
-        if (isPlayingTrack01)
-        {
-            newClip = newHouseAudio;
-        }
-        else
-        {
-            newClip = oldHouseAudio;
-        }
 
 
         if (isPlayingTrack01)

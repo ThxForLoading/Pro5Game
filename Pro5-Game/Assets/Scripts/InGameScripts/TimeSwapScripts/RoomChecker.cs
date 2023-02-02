@@ -247,7 +247,7 @@ public class RoomChecker : MonoBehaviour
                     player.transform.position = OLDTeleportPoints[14].gameObject.transform.position;
                     break;
                 case RoomLocator.StorageRoom:
-                    player.transform.position = OLDTeleportPoints[15].gameObject.transform.position;
+                    //player.transform.position = OLDTeleportPoints[15].gameObject.transform.position;      //Uncomment if necessary, prevents player from traveling to old storageRoom
                     break;
                 case RoomLocator.FinalRoom:
                     player.transform.position = OLDTeleportPoints[16].gameObject.transform.position;
