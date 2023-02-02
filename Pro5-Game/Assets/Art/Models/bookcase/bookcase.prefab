@@ -1447,6 +1447,7 @@ GameObject:
   - component: {fileID: 3814582363664577961}
   - component: {fileID: 3161139807436479253}
   - component: {fileID: 8786379551679127486}
+  - component: {fileID: 5504093126989879508}
   m_Layer: 0
   m_Name: sideShelf
   m_TagString: Untagged
@@ -1519,6 +1520,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5504093126989879508
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637543996874359860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5911120979924475916, guid: 951f46b431f0d2946bf8b091cce91087, type: 3}
 --- !u!1 &659086094052539463
 GameObject:
   m_ObjectHideFlags: 0
@@ -12439,6 +12454,7 @@ GameObject:
   - component: {fileID: 8783814096102599039}
   - component: {fileID: 7696610474745812323}
   - component: {fileID: 2146653185917481674}
+  - component: {fileID: 6762808838874285760}
   m_Layer: 0
   m_Name: sideShelf
   m_TagString: Untagged
@@ -12511,6 +12527,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6762808838874285760
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576796323028762597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2476071222356270278, guid: 951f46b431f0d2946bf8b091cce91087, type: 3}
 --- !u!1 &5618219675623595763
 GameObject:
   m_ObjectHideFlags: 0
@@ -13616,6 +13646,7 @@ GameObject:
   - component: {fileID: 6020431355559982965}
   - component: {fileID: 8595944376427339590}
   - component: {fileID: 4839817924801312251}
+  - component: {fileID: 705664878033178530}
   m_Layer: 0
   m_Name: sideShelf
   m_TagString: Untagged
@@ -13688,6 +13719,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &705664878033178530
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539790253312008280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8040503375886936790, guid: 951f46b431f0d2946bf8b091cce91087, type: 3}
 --- !u!1 &6632512410188792864
 GameObject:
   m_ObjectHideFlags: 0
@@ -17385,6 +17430,7 @@ GameObject:
   - component: {fileID: 5117809991563075250}
   - component: {fileID: 3542613769249995431}
   - component: {fileID: 3411777701811439645}
+  - component: {fileID: 1144583877168921864}
   m_Layer: 0
   m_Name: sideShelf
   m_TagString: Untagged
@@ -17457,6 +17503,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1144583877168921864
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662879867827322542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9190245769257717533, guid: 951f46b431f0d2946bf8b091cce91087, type: 3}
 --- !u!1 &8698206904422957289
 GameObject:
   m_ObjectHideFlags: 0
