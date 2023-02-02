@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Whilefun.FPEKit;
 
 public class TriggerEndScene : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class TriggerEndScene : MonoBehaviour
 
     public void startEnding()
     {
+        FPEInteractionManagerScript.Instance.BeginCutscene(true);
         Background.SetActive(true);
         Slide.sprite = Intro[0];
         SlideHolder.SetActive(true);
