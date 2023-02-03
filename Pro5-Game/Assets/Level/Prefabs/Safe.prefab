@@ -292,7 +292,7 @@ MonoBehaviour:
   requiredInventoryQuantity: 1
   requiredToBeInHand: 2
   removeOnUse: 0
-  eventFireType: 0
+  eventFireType: 1
   eventRepeatDelay: 0
   ActivationEvent:
     m_PersistentCalls:

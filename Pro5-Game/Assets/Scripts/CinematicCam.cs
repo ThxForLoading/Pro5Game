@@ -20,7 +20,7 @@ public class CinematicCam : MonoBehaviour
     {
         mainCam = GameObject.Find("MainCamera").GetComponent<Camera>();
         interactionLabel = GameObject.Find("InteractionTextLabel");
-        interactionManager = FindObjectOfType<FPEInteractionManagerScript>();
+        //interactionManager = FindObjectOfType<FPEInteractionManagerScript>();
         cam = GetComponent<Camera>();
         
         
@@ -40,11 +40,14 @@ public class CinematicCam : MonoBehaviour
         mainCam.enabled = false;
         cam.enabled = true;
         interactionLabel.SetActive(false);
-        interactionManager.BeginCutscene();
+        //interactionManager.BeginCutscene();
+        FPEInteractionManagerScript.Instance.BeginCutscene();
+
         yield return new WaitForSeconds(time);
         mainCam.enabled = true;
         cam.enabled = false;
         interactionLabel.SetActive(true);
-        interactionManager.EndCutscene();
+        //interactionManager.EndCutscene();
+        FPEInteractionManagerScript.Instance.EndCutscene();
     }
 }
