@@ -21,14 +21,16 @@ public class CinematicUI : MonoBehaviour
     {
         uiActive = true;
         UI.SetActive(true);
-        im.BeginCutscene(true);
+        //im.BeginCutscene(true);
+        FPEInteractionManagerScript.Instance.BeginCutscene(true);
     }
 
     public void stopCinematic()
     {
         uiActive = false;
         UI.SetActive(false);
-        im.EndCutscene(true);
+        //im.EndCutscene(true);
+        FPEInteractionManagerScript.Instance.EndCutscene(true);
     }
 
     
