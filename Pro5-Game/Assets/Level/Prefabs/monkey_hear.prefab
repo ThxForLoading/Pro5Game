@@ -123,10 +123,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 939844670069452587}
-  - component: {fileID: 8693586889965490662}
   - component: {fileID: 6511413759031281407}
   - component: {fileID: 7670893926567165114}
   - component: {fileID: 7012343273052781222}
+  - component: {fileID: 1751308745088945817}
   m_Layer: 0
   m_Name: monkey_hear
   m_TagString: MonkeyStatue
@@ -160,19 +160,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8693586889965490662
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450693200344577425}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.030050233
-  m_Center: {x: 0.0000000038905172, y: 0.03, z: -0.000000003141712}
 --- !u!54 &6511413759031281407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
-  highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
+  highlightColor: {r: 0.82641506, g: 0.82641506, b: 1, a: 1}
   interactionDistance: 2
   playSecondarySoundOnInteract: 0
   showWithText: 0
@@ -310,13 +297,13 @@ MonoBehaviour:
   putBackString: Place
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
-  examinationOffsetUp: 0
-  examinationOffsetForward: 0
+  examinationOffsetUp: -0.3
+  examinationOffsetForward: -0.3
   pickupRotationOffset: {x: 0, y: 0, z: 0}
   tossStrength: 1
   tossOffsetUp: 0.1
   tossOffsetForward: 0.1
-  rotationLockType: 0
+  rotationLockType: 1
   enableSounds: 1
   pickupSounds: []
   putBackSounds: []
@@ -330,6 +317,19 @@ MonoBehaviour:
       m_Calls: []
   putbackRepeatMode: 1
   placementID: 0
+--- !u!65 &1751308745088945817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450693200344577425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.034092527, y: 0.05390376, z: 0.0466702}
+  m_Center: {x: -0.0018513104, y: 0.028769027, z: -0.000000002483527}
 --- !u!1 &952440170272661907
 GameObject:
   m_ObjectHideFlags: 0
