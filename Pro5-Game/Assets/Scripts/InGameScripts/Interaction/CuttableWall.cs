@@ -25,6 +25,7 @@ public class CuttableWall : MonoBehaviour
         Debug.Log("Spawn Key");
         Instantiate(prefab, spawn.transform);
         overlay.SetActive(true);
+        GetComponent<Collider>().enabled = false;
     }
 
     public void NoReaction()

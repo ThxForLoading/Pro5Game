@@ -57,7 +57,7 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: <DEFAULT INTERACTION STRING>
+  interactionString: Pickup
   interactionFailedString: Interaction Failed
   putBackString: <DEFAULT PUT BACK STRING>
   postExaminationInteractionString: 
@@ -88,7 +88,7 @@ MonoBehaviour:
   canBeHeld: 0
   canBeDropped: 0
   canBeConsumed: 0
-  itemName: New Inventory Item
+  itemName: Hammer
   itemImage: {fileID: 21300000, guid: c46d8925c9dd6bb4cb11637519da4751, type: 3}
   itemDescription: A Hammer... you can smash stuff with it
   stackable: 0

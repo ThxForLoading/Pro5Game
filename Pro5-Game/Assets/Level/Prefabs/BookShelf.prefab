@@ -2287,7 +2287,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberBooks: 4
   door: {fileID: 4639106405396322690}
-  wrongCombinationClip: {fileID: 0}
+  wrongCombinationClip: {fileID: 8300000, guid: 92d28813757e863449b97c875b16105f,
+    type: 3}
+  bookSlide: {fileID: 8300000, guid: 3b891d1d0d768d94dba0e90ad7c577a3, type: 3}
+  shelfSlide: {fileID: 8300000, guid: 11f9aedda1db00c4ebcaec79eb40bad7, type: 3}
 --- !u!82 &4923671804067194692
 AudioSource:
   m_ObjectHideFlags: 0

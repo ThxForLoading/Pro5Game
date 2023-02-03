@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 1735833282114138490}
   - component: {fileID: 1735833282114138492}
   - component: {fileID: 1735833282114138491}
-  - component: {fileID: 1735833282114138489}
+  - component: {fileID: 6656854197739439144}
   m_Layer: 0
   m_Name: CasettePlayer
   m_TagString: Untagged
@@ -1234,7 +1234,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1735833282114138489
+--- !u!114 &6656854197739439144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1243,53 +1243,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 7527248224837397411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b29d18288e7a854b8c11525ef838623, type: 3}
+  m_Script: {fileID: 11500000, guid: 15d24ef62f168f84e8e758b035a3cfb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
   highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
   interactionDistance: 2
-  playSecondarySoundOnInteract: 0
+  playSecondarySoundOnInteract: 1
   showWithText: 0
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
-  soundToPlayOnInteract: {fileID: 0}
-  interactionString: <DEFAULT INTERACTION STRING>
+  soundToPlayOnInteract: {fileID: 8300000, guid: 7b4f55d3e2fa3e94392c2a8a5384c6a8,
+    type: 3}
+  interactionString: Play Tape
   interactionFailedString: Interaction Failed
-  putBackString: <DEFAULT PUT BACK STRING>
-  postExaminationInteractionString: 
-  autoGeneratePutBackObject: 0
-  examinationOffsetUp: 0
-  examinationOffsetForward: 0
-  pickupRotationOffset: {x: 0, y: 0, z: 0}
-  tossStrength: 1
-  tossOffsetUp: 0.1
-  tossOffsetForward: 0.1
-  rotationLockType: 0
-  enableSounds: 1
-  pickupSounds:
-  - {fileID: 8300000, guid: 7b4f55d3e2fa3e94392c2a8a5384c6a8, type: 3}
-  putBackSounds: []
-  impactSounds: []
-  OnPickupEvent:
+  canInteractWithWhileHoldingObject: 1
+  requireInventoryItem: 0
+  requiredItemType: 3
+  requiredInventoryQuantity: 1
+  requiredToBeInHand: 2
+  removeOnUse: 0
+  eventFireType: 1
+  eventRepeatDelay: 0
+  ActivationEvent:
     m_PersistentCalls:
       m_Calls: []
-  pickupRepeatMode: 0
-  OnPutBackEvent:
+  ActivationFailureEvent:
     m_PersistentCalls:
       m_Calls: []
-  putbackRepeatMode: 0
-  inventoryItemType: 0
-  inventoryQuantity: 1
-  inventoryGetSound: {fileID: 0}
-  pickupPermitted: 1
-  canBeHeld: 0
-  canBeDropped: 0
-  canBeConsumed: 0
-  itemName: New Inventory Item
-  itemImage: {fileID: 0}
-  itemDescription: Item Description Here
-  stackable: 0
+  DeactivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  toggleOffRequiresInventory: 0
+  toggleOnInteractionString: 
+  toggleOffInteractionString: 
+  toggleOnAtStart: 0
+  toggleOffAtStart: 0
+  fireToggleEventsOnLoadGame: 1
 --- !u!1 &8156612156104464664
 GameObject:
   m_ObjectHideFlags: 0

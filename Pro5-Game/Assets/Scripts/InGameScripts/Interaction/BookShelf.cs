@@ -13,6 +13,8 @@ public class BookShelf : MonoBehaviour
     [SerializeField] private int numberBooks = 4;
     [SerializeField] private FPESlidingDoor door;
     [SerializeField] private AudioClip wrongCombinationClip;
+    [SerializeField] private AudioClip bookSlide;
+    [SerializeField] private AudioClip shelfSlide;
 
     private AudioSource audioSource;
     private  int[] bookIds = new int[4];
@@ -31,6 +33,8 @@ public class BookShelf : MonoBehaviour
 
     public void CheckOpenCondition(int bookID, Book curBook)
     {
+        
+        audioSource.PlayOneShot(bookSlide);
         print("check open cond");
         books[checkID] = curBook;
 
@@ -44,14 +48,15 @@ public class BookShelf : MonoBehaviour
         // win condition
         if (checkID == numberBooks && sequenceCorrect)
         {
-            OpenDoor();
+            
             isActive = false;
+            Invoke("OpenDoor", 0.5f);
         }
         
         // loose condition
         if (checkID == numberBooks && !sequenceCorrect)
         {
-            audioSource.PlayOneShot(wrongCombinationClip);
+            
             Invoke("ExecuteLoose", 0.5f);
 
         }
@@ -59,7 +64,7 @@ public class BookShelf : MonoBehaviour
 
     private void ExecuteLoose()
     {
-        
+        audioSource.PlayOneShot(wrongCombinationClip);
         foreach (Book book in books)
         {
             book.RestoreBookPos();
@@ -72,6 +77,7 @@ public class BookShelf : MonoBehaviour
 
     private void OpenDoor()
     {
+        audioSource.PlayOneShot(shelfSlide);
         door.activateDoor();
         isActive = false;
     }

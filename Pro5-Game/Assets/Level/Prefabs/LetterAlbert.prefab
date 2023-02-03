@@ -231,8 +231,9 @@ MonoBehaviour:
   showWithText: 0
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
-  soundToPlayOnInteract: {fileID: 0}
-  interactionString: <DEFAULT INTERACTION STRING>
+  soundToPlayOnInteract: {fileID: 8300000, guid: 6d4bccfe042760e458d0581b2048decd,
+    type: 3}
+  interactionString: Read Letter
   interactionFailedString: Interaction Failed
   canInteractWithWhileHoldingObject: 1
   requireInventoryItem: 0
