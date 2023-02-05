@@ -394,6 +394,7 @@ MonoBehaviour:
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
   interactionString: Pick up old watch
+  interactionFailedString: Interaction Failed
   putBackString: <DEFAULT PUT BACK STRING>
   postExaminationInteractionString: 
   autoGeneratePutBackObject: 0
