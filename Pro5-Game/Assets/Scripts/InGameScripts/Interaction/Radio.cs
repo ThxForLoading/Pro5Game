@@ -94,4 +94,9 @@ public class Radio : MonoBehaviour
             audioSource.clip = null;
         }
     }
+
+    public void StopMorse()
+    {
+        audioSource.clip = null;
+    }
 }

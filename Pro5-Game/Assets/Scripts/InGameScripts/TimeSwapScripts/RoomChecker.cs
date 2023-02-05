@@ -9,6 +9,7 @@ public class RoomChecker : MonoBehaviour
     [SerializeField] Text roomText;
     RoomLocator currentRoom = RoomLocator.NoRoom;
     GameObject player;
+    GameObject Radio;
     [SerializeField] GameObject[] NOWTeleportPoints;
     [SerializeField] GameObject[] OLDTeleportPoints;
     [SerializeField] private PostProcessProfile pppNow;
@@ -23,6 +24,7 @@ public class RoomChecker : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         clockChecker = GameObject.FindGameObjectWithTag("ClockCheck");
+        Radio = GameObject.FindGameObjectWithTag("Radio");
         print(clockChecker);
         volume = FindObjectOfType<PostProcessVolume>();
     }
@@ -96,6 +98,7 @@ public class RoomChecker : MonoBehaviour
             Debug.Log("Changing Times");
             Fader.fader.CrossFade(changeTime);
             AudioManager.instance.SwapTrack();
+            Radio.GetComponent<Radio>().StopMorse();
 
         }
 
