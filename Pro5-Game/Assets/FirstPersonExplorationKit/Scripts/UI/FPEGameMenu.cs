@@ -1149,6 +1149,17 @@ namespace Whilefun.FPEKit
             FPESaveLoadManager.Instance.ReturnToMainMenu();
 
         }
+        
+        public void exitToDesktop()
+        {
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+
+        }
 
 
         public void changeMouseSensitivity(float amount)

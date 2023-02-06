@@ -1591,8 +1591,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114372449583772724}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: exitGameButtonPressed
+        m_TargetAssemblyTypeName: Whilefun.FPEKit.FPEGameMenu, Assembly-CSharp
+        m_MethodName: exitToDesktop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
