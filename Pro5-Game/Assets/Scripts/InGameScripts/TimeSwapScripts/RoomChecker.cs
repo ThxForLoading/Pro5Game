@@ -98,12 +98,14 @@ public class RoomChecker : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && clockChecker.GetComponent<ClockEnabler>().clock)
         {
-            Debug.Log("Changing Times");
-            Fader.fader.CrossFade(changeTime);
-            AudioManager.instance.SwapTrack();
-            StartCoroutine(startVoiceLine());
-            Radio.GetComponent<Radio>().StopMorse();
-
+            if (currentRoom != RoomLocator.StorageRoom)
+            {
+                Debug.Log("Changing Times");
+                Fader.fader.CrossFade(changeTime);
+                AudioManager.instance.SwapTrack();
+                StartCoroutine(startVoiceLine());
+                Radio.GetComponent<Radio>().StopMorse();
+            }
         }
 
         if (!InTheNow)
@@ -329,7 +331,7 @@ public class RoomChecker : MonoBehaviour
                     player.transform.position = NOWTeleportPoints[14].gameObject.transform.position;
                     break;
                 case RoomLocator.StorageRoom:
-                    player.transform.position = NOWTeleportPoints[15].gameObject.transform.position;
+                    //player.transform.position = NOWTeleportPoints[15].gameObject.transform.position;
                     break;
                 case RoomLocator.FinalRoom:
                     player.transform.position = NOWTeleportPoints[16].gameObject.transform.position;
