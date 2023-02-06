@@ -21,6 +21,7 @@ public class TriggerEndScene : MonoBehaviour
     [SerializeField] GameObject SlideHolder;
     [SerializeField] UnityEngine.UI.Image Slide;
     [SerializeField] GameObject ChoiceUI;
+    [SerializeField] GameObject leaveGameButton;
 
     private bool choice = true;
 
@@ -70,9 +71,9 @@ public class TriggerEndScene : MonoBehaviour
         Slide.sprite = Fight[0];
         yield return new WaitForSeconds(3f);
         Slide.sprite = Fight[1];
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         Slide.sprite = Fight[2];
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(5f);
         Slide.sprite = Fight[3];
         yield return new WaitForSeconds(10f);
         Slide.sprite = Fight[4];
@@ -108,10 +109,13 @@ public class TriggerEndScene : MonoBehaviour
             Slide.sprite = ChoiceA[2];
             yield return new WaitForSeconds(6f);
             Slide.sprite = ChoiceA[3];
-            yield return new WaitForSeconds(9f);
+            yield return new WaitForSeconds(17f);
             Slide.sprite = EndingA;
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(12f);
             Slide.sprite = Credits;
+            leaveGameButton.SetActive(true);
+            yield return waitForKeyPress();
+            Application.Quit();
         }
         else
         {
@@ -121,8 +125,12 @@ public class TriggerEndScene : MonoBehaviour
             Slide.sprite = ChoiceB[1];
             yield return new WaitForSeconds(11f);
             Slide.sprite = EndingB;
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(12f);
             Slide.sprite = Credits;
+            leaveGameButton.SetActive(true);
+            yield return waitForKeyPress();
+            Application.Quit();
+
         }
     }
 
@@ -138,5 +146,4 @@ public class TriggerEndScene : MonoBehaviour
             yield return null; // wait until next frame, then continue execution from here (loop continues)
         }
     }
-
 }
