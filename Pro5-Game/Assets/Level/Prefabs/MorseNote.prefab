@@ -64,8 +64,9 @@ GameObject:
   - component: {fileID: 445298}
   - component: {fileID: 5445292}
   - component: {fileID: 6545292}
-  - component: {fileID: 74510913914254383}
   - component: {fileID: 8284832}
+  - component: {fileID: 4430396428930255887}
+  - component: {fileID: 6286533985050128904}
   m_Layer: 0
   m_Name: MorseNote
   m_TagString: Untagged
@@ -118,63 +119,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &74510913914254383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b29d18288e7a854b8c11525ef838623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightOnMouseOver: 1
-  highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
-  interactionDistance: 2
-  playSecondarySoundOnInteract: 0
-  showWithText: 0
-  audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
-  soundPlaybackBehaviour: 0
-  soundToPlayOnInteract: {fileID: 0}
-  interactionString: Pick up note
-  putBackString: Put back note
-  postExaminationInteractionString: 
-  autoGeneratePutBackObject: 0
-  examinationOffsetUp: 0
-  examinationOffsetForward: -0.3
-  pickupRotationOffset: {x: 0, y: 0, z: 0}
-  tossStrength: 1
-  tossOffsetUp: 0.1
-  tossOffsetForward: 0.1
-  rotationLockType: 3
-  enableSounds: 1
-  pickupSounds:
-  - {fileID: 8300000, guid: 41e6d7228dbca41498f54813e28eda6a, type: 3}
-  putBackSounds:
-  - {fileID: 8300000, guid: 847846e7936a5b64c84f12f65782ffa9, type: 3}
-  impactSounds:
-  - {fileID: 8300000, guid: 57d6b959031d3054ea12c44f2a57d2b0, type: 3}
-  OnPickupEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  pickupRepeatMode: 0
-  OnPutBackEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  putbackRepeatMode: 0
-  inventoryItemType: 0
-  inventoryQuantity: 1
-  inventoryGetSound: {fileID: 0}
-  pickupPermitted: 1
-  canBeHeld: 1
-  canBeDropped: 0
-  canBeConsumed: 0
-  itemName: Morse Code Note
-  itemImage: {fileID: 0}
-  itemDescription: Instructions on how to read Morse Code
-  stackable: 0
 --- !u!82 &8284832
 AudioSource:
   m_ObjectHideFlags: 0
@@ -271,6 +215,76 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &4430396428930255887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8861f87a970a1d419ab729b947e46b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6286533985050128904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d24ef62f168f84e8e758b035a3cfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnMouseOver: 1
+  highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
+  interactionDistance: 2
+  playSecondarySoundOnInteract: 0
+  showWithText: 0
+  audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
+  soundPlaybackBehaviour: 0
+  soundToPlayOnInteract: {fileID: 8300000, guid: 41e6d7228dbca41498f54813e28eda6a,
+    type: 3}
+  interactionString: Pick up note
+  interactionFailedString: Interaction Failed
+  canInteractWithWhileHoldingObject: 1
+  requireInventoryItem: 0
+  requiredItemType: 3
+  requiredInventoryQuantity: 1
+  requiredToBeInHand: 2
+  removeOnUse: 0
+  eventFireType: 0
+  eventRepeatDelay: 0
+  ActivationEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ActivationFailureEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DeactivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  toggleOffRequiresInventory: 0
+  toggleOnInteractionString: 
+  toggleOffInteractionString: 
+  toggleOnAtStart: 0
+  toggleOffAtStart: 0
+  fireToggleEventsOnLoadGame: 1
 --- !u!1 &6969791498964588033
 GameObject:
   m_ObjectHideFlags: 0
