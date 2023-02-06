@@ -8,11 +8,12 @@ public class ClockEnabler : MonoBehaviour
     public bool hint = true;
     [SerializeField] GameObject UIClock;
     [SerializeField] GameObject UIHint;
+    GameObject voicePlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        voicePlayer = GameObject.FindGameObjectWithTag("VoicePlayer");
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class ClockEnabler : MonoBehaviour
     private IEnumerator ShowHint()
     {
         UIHint.SetActive(true);
-
+        voicePlayer.GetComponent<VoicePlayer>().PlayClockTimeTravelStories();
         yield return new WaitForSeconds(5.0f);
 
         UIHint.SetActive(false);

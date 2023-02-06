@@ -10,6 +10,7 @@ TagManager:
   - IceWithKey
   - Schatulle
   - Radio
+  - VoicePlayer
   layers:
   - Default
   - TransparentFX

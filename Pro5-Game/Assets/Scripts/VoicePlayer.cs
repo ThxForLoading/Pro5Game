@@ -92,7 +92,7 @@ public class VoicePlayer : MonoBehaviour
         StopAllCoroutines();
         AudioClip newClip;
         newClip = VoiceLines[7];
-        StartCoroutine(PlayVoiceTrack(newClip));
+        StartCoroutine(PlayDelayedVoiceTrack(newClip));
     }
 
     public void PlayBloodyHellItsCold()
@@ -136,6 +136,14 @@ public class VoicePlayer : MonoBehaviour
 
     private IEnumerator PlayVoiceTrack(AudioClip newClip)
     {
+        track01.clip = newClip;
+        track01.Play();
+        yield return null;
+    }
+
+    private IEnumerator PlayDelayedVoiceTrack(AudioClip newClip)
+    {
+        yield return new WaitForSeconds(3.0f);
         track01.clip = newClip;
         track01.Play();
         yield return null;
