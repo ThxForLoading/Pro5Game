@@ -3454,6 +3454,8 @@ GameObject:
   - component: {fileID: 6248073215736537274}
   - component: {fileID: 3110922399673299087}
   - component: {fileID: 5191110023303098224}
+  - component: {fileID: 5392878905862897902}
+  - component: {fileID: 5121753909047991298}
   m_Layer: 0
   m_Name: polySurface3
   m_TagString: Untagged
@@ -3526,6 +3528,64 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5392878905862897902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021627665022994066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.54301494, y: 0.42609608, z: 0.41472906}
+  m_Center: {x: 0.0000038143173, y: 1.721571, z: 0.0063747615}
+--- !u!114 &5121753909047991298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021627665022994066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d24ef62f168f84e8e758b035a3cfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightOnMouseOver: 1
+  highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
+  interactionDistance: 2
+  playSecondarySoundOnInteract: 0
+  showWithText: 0
+  audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
+  soundPlaybackBehaviour: 0
+  soundToPlayOnInteract: {fileID: 0}
+  interactionString: The time is stuck at 3 o'clock.
+  interactionFailedString: The time is stuck at 3 o'clock.
+  canInteractWithWhileHoldingObject: 1
+  requireInventoryItem: 0
+  requiredItemType: 3
+  requiredInventoryQuantity: 1
+  requiredToBeInHand: 2
+  removeOnUse: 0
+  eventFireType: 0
+  eventRepeatDelay: 0
+  ActivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ActivationFailureEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DeactivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  toggleOffRequiresInventory: 0
+  toggleOnInteractionString: 
+  toggleOffInteractionString: 
+  toggleOnAtStart: 0
+  toggleOffAtStart: 0
+  fireToggleEventsOnLoadGame: 1
 --- !u!1 &7286661185483326468
 GameObject:
   m_ObjectHideFlags: 0
