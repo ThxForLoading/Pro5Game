@@ -14,6 +14,8 @@ public class TriggerEndScene : MonoBehaviour
     [SerializeField] Sprite[] ChoiceB;
     [SerializeField] Sprite Decision;
     [SerializeField] Sprite Credits;
+    [SerializeField] Sprite EndingA;
+    [SerializeField] Sprite EndingB;
 
     [SerializeField] GameObject Background;
     [SerializeField] GameObject SlideHolder;
@@ -107,6 +109,8 @@ public class TriggerEndScene : MonoBehaviour
             yield return new WaitForSeconds(6f);
             Slide.sprite = ChoiceA[3];
             yield return new WaitForSeconds(9f);
+            Slide.sprite = EndingA;
+            yield return new WaitForSeconds(8f);
             Slide.sprite = Credits;
         }
         else
@@ -116,6 +120,8 @@ public class TriggerEndScene : MonoBehaviour
             yield return new WaitForSeconds(4f);
             Slide.sprite = ChoiceB[1];
             yield return new WaitForSeconds(11f);
+            Slide.sprite = EndingB;
+            yield return new WaitForSeconds(8f);
             Slide.sprite = Credits;
         }
     }
