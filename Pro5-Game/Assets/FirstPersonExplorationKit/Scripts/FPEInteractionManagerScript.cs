@@ -122,7 +122,9 @@ namespace Whilefun.FPEKit
         // HUD
         private FPEHUD myHUD = null;
         private FPEHUDData myHUDData = null;
-
+        
+        // Custom changes
+        private bool examinationRotationApplied = false;
 
 #if UNITY_EDITOR
         [Header("Debug")]
@@ -720,6 +722,9 @@ namespace Whilefun.FPEKit
                     currentHeldObject.GetComponent<FPEInteractablePickupScript>().endExamination();
                     enableMouseLook();
                     enableMovement();
+                    
+                    // Custom change
+                    examinationRotationApplied = false;
 
                 }
 
@@ -738,6 +743,16 @@ namespace Whilefun.FPEKit
                         float examinationOffsetUp = currentHeldObject.GetComponent<FPEInteractablePickupScript>().examinationOffsetUp;
                         float examinationOffsetForward = currentHeldObject.GetComponent<FPEInteractablePickupScript>().examinationOffsetForward;
                         currentHeldObject.transform.position = interactionObjectExamineLocation.transform.position + Vector3.up * examinationOffsetUp + interactionObjectExamineLocation.transform.forward * examinationOffsetForward;
+
+                        float rotX = currentHeldObject.GetComponent<FPEInteractablePickupScript>().examinationRotX;
+                        
+                        if (rotX != 0.0f && !examinationRotationApplied)
+                        {
+                            //currentHeldObject.transform.rotation = Quaternion.Euler(rotX, currentHeldObject.transform.rotation.y, currentHeldObject.transform.rotation.z);
+                            currentHeldObject.transform.Rotate(interactionObjectExamineLocation.transform.right, rotX, Space.World);
+                            examinationRotationApplied = true;
+                        }
+                        
                         float rotationInputX = 0.0f;
                         float rotationInputY = 0.0f;
                         float examinationChangeX = FPEInputManager.Instance.GetAxis(FPEInputManager.eFPEInput.FPE_INPUT_MOUSELOOKX);

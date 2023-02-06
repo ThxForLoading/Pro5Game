@@ -32,6 +32,10 @@ namespace Whilefun.FPEKit
         public float examinationOffsetUp = 0.0f;
         [Tooltip("How far FORWARD (away from camera) the object will be when examined. When setting up big objects, this value should generally have a higher value (e.g. 1.0). Smaller objects should have a slightly negative value (e.g. -0.2)")]
         public float examinationOffsetForward = 0.0f;
+        
+        // Custom Change
+        public float examinationRotX = 0.0f;    
+        
         [Tooltip("Some imported models might be flipped in one or more axes. If so, use this to offset that effect. Recommended approach is to ensure models are imported in same coordinate orientation as Unity, and leave this value as (0,0,0).")]
         public Vector3 pickupRotationOffset = Vector3.zero;
         [Tooltip("Toss Strength acts as a Physics Force multiplier when the object is tossed Higher values mean the object is tossed harder, and goes farther. Default is 1.0. 5.0 or above is probably too strong.")]
