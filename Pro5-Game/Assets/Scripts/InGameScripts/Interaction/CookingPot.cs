@@ -8,6 +8,7 @@ public class CookingPot : PutBackSpot
     {
         if (objID == placementID)
         {
+            if (riddleHelper != null) riddleHelper.stopParticles();
             correctPlacement = true;
             putBackBehaviour.CheckConditions();
             GetComponent<SphereCollider>().enabled = false;

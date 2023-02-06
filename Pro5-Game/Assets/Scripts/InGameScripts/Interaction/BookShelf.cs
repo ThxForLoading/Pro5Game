@@ -15,6 +15,7 @@ public class BookShelf : MonoBehaviour
     [SerializeField] private AudioClip wrongCombinationClip;
     [SerializeField] private AudioClip bookSlide;
     [SerializeField] private AudioClip shelfSlide;
+    [SerializeField] private RiddleHelper riddleHelper;
 
     private AudioSource audioSource;
     private  int[] bookIds = new int[4];
@@ -33,6 +34,7 @@ public class BookShelf : MonoBehaviour
 
     public void CheckOpenCondition(int bookID, Book curBook)
     {
+        if (riddleHelper!=null) riddleHelper.stopParticles();
         
         audioSource.PlayOneShot(bookSlide);
         print("check open cond");

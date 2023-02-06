@@ -8,6 +8,7 @@ public class PutBackSpot : FPEPutBackScript
 
     [SerializeField] private String tagName;
     [SerializeField] protected int placementID;
+    [SerializeField] protected RiddleHelper riddleHelper;
     protected  PutBackBehaviour putBackBehaviour;
 
     protected bool correctPlacement = false;
@@ -40,6 +41,8 @@ public class PutBackSpot : FPEPutBackScript
     // setter and getter for correctPacement
     public virtual void PlaceObject(int objID)
     {
+        if (riddleHelper != null) riddleHelper.stopParticles();
+        
         if (objID == placementID)
         {
             correctPlacement = true;
