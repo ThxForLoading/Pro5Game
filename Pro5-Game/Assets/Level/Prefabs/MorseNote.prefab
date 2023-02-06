@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
   highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
-  interactionDistance: 2
+  interactionDistance: 2.5
   playSecondarySoundOnInteract: 0
   showWithText: 0
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>

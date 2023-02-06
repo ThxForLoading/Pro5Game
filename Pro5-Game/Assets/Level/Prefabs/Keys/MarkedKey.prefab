@@ -343,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightOnMouseOver: 1
   highlightColor: {r: 0.57, g: 0.57, b: 1, a: 1}
-  interactionDistance: 2
+  interactionDistance: 2.5
   playSecondarySoundOnInteract: 0
   showWithText: 0
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
@@ -356,6 +356,7 @@ MonoBehaviour:
   autoGeneratePutBackObject: 0
   examinationOffsetUp: 0
   examinationOffsetForward: 0
+  examinationRotX: 0
   pickupRotationOffset: {x: 0, y: 0, z: 0}
   tossStrength: 1
   tossOffsetUp: 0.1
