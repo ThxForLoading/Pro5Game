@@ -164,7 +164,7 @@ MonoBehaviour:
   audioLogText: <DEFAULT PICKUP SOUND AUDIO LOG TEXT>
   soundPlaybackBehaviour: 0
   soundToPlayOnInteract: {fileID: 0}
-  interactionString: Open
+  interactionString: Pull
   interactionFailedString: Interaction Failed
   canInteractWithWhileHoldingObject: 1
   requireInventoryItem: 0
@@ -380,14 +380,14 @@ MonoBehaviour:
   internalUnlockString: It's unlocked now.
   externalLockString: I have to disable the security system first.
   playSounds: 1
-  doorOpenSounds: {fileID: 0}
-  doorCloseSounds: {fileID: 0}
+  doorOpenSounds: {fileID: 11400000, guid: 9f6698150d3a6364f8e8d82e5d4f7a14, type: 2}
+  doorCloseSounds: {fileID: 11400000, guid: 9f6698150d3a6364f8e8d82e5d4f7a14, type: 2}
   doorLatchSounds: {fileID: 0}
   doorBlockedSounds: {fileID: 0}
   doorUnlockSounds: {fileID: 0}
   doorOpenFailureSounds: {fileID: 0}
   slideDistance: 2
-  slideOpenTimeInSeconds: 5
+  slideOpenTimeInSeconds: 3.5
   doorSlideSnapDistance: 0.05
   closeAutomatically: 0
   automaticCloseTime: 1
